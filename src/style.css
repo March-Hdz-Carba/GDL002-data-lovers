@@ -1,0 +1,33 @@
+
+body {
+    background: url("../src/images/Background.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right:auto;
+    background-attachment: fixed;
+    margin: 0;
+} 
+
+@media only screen and (max-width: 800px) {
+    body{
+        background : url(https://images4.alphacoders.com/641/thumb-1920-641968.jpg);
+        height: 100vh;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        max-width: 100%;
+        margin-left: auto;
+        margin-right:auto;
+        background-attachment: fixed;
+        margin: 0;
+    }
+  }
+
+
+
+
