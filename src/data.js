@@ -3,7 +3,7 @@
 
 const tipPoken = "Grass";
 const dataPokemon = POKEMON.pokemon;
-const pkm = "Pikachu"; //document.getElementById("PokeFind").value;
+const pkm = "Charmander"; //document.getElementById("PokeFind").value;
 
 /*const buscar = () => {
   let pokemon = "Pikachu";
