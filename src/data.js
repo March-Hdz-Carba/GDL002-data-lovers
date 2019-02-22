@@ -1,8 +1,5 @@
-// esta es una función de ejemplo
-// puedes ver como agregamos la función a nuestro objeto global window
 
-const tipPoken = "Grass";
-const dataPokemon = POKEMON.pokemon;
+
 const pkm = "Pikachu"; //document.getElementById("PokeFind").value;
 
 /*const buscar = () => {
@@ -31,7 +28,7 @@ findPoke(POKEMON.pokemon, "ivysaur");*/
 
 
 //Funcion para encontrar un pokemon en especifico, con sus diferentes caracteristicas LA CHIDA
-const findPokemon = (dataPokemon,pkm) => {
+/*const findPokemon = (dataPokemon,pkm) => {
   dataPokemon.find(function(poke){
     if (poke.name === pkm) {
     document.getElementById("namePokeFind").innerHTML = poke.name
@@ -40,15 +37,15 @@ const findPokemon = (dataPokemon,pkm) => {
     document.getElementById("typePokeFind").innerHTML = poke.type//[0] + "," + " " + poke.type[1]
     document.getElementById("weaknessesPokeFind").innerHTML = poke.weaknesses//[0] + "," + " " + poke.weaknesses[1]+ "," + " " + poke.weaknesses[2]+ "," + " " + poke.weaknesses[3]+ "," + " " + poke.weaknesses[4]+ "," + " " + poke.weaknesses[5]
     document.getElementById("imagePokeFind").src = poke.img
-    } else /*if (poke.name !== pkm)*/{console.log("Pokemon No encontrado")
-        }
-      }
-    )
-  };
-document.getElementById("findPkemon").addEventListener("click",findPokemon(dataPokemon, pkm));
+    } else /*if (poke.name !== pkm)*///{console.log("Pokemon No encontrado")
+  //      }
+  //    }
+  //  )
+  //};
+//document.getElementById("findPkemon").addEventListener("click",findPokemon());
 
 //Funcion para filtrar 
-const filPokemon = (dataPokemon,tipPoken) => { 
+/*const filPokemon = (dataPokemon,tipPoken) => { 
   dataPokemon.filter(function(poke){
     if (poke.type[0] === tipPoken || poke.type[1] === tipPoken){
       document.getElementById("imageFilPokem").src = poke.img
@@ -56,7 +53,21 @@ const filPokemon = (dataPokemon,tipPoken) => {
     }
   })
 };
-console.log(filPokemon(dataPokemon,tipPoken));
+console.log(filPokemon(dataPokemon,tipPoken));*/
+
+//Nueva funcion para filtrar por tipo
+const filPokeType = () => {
+  const tipPoken = "Grass";
+  const dataPokemon = POKEMON.pokemon;
+  const typePoke = dataPokemon.filter (data => data.type[0] === tipPoken || data.type[1] === tipPoken)
+  const items = typePoke.map(type => "" + type.name);  
+  return items; 
+    
+};
+
+console.log(filPokeType());
+
+
 
 /*const printFilPokemon = (dataPokemon,) => {
   const addPokemon = document.createElement ("div");
