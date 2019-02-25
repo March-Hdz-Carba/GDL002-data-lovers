@@ -1,6 +1,43 @@
+/*window.pokemon = {
+  filter : (dataPokemon, condition) => {
+    const data = POKEMON.pokemon;
+    const condition = "Grass";
+    const typePoke = dataPokemon.filter (data => data.type[0] === condition || data.type[1] === condition)
+    const items = typePoke.map(type => "" + type.name);  
+    console.log(items);
+    //return items  
+  }
+  
+}*/
+
+//Nueva funcion para filtrar por tipo
+const filPokeType = () => {
+  const tipPoken = "Grass";
+  const dataPokemon = POKEMON.pokemon;
+  const typePoke = dataPokemon.filter (data => data.type[0] === tipPoken || data.type[1] === tipPoken)
+  const items = typePoke.map(type => "" + type.name);  
+  return items; 
+    
+};
+
+console.log(filPokeType());
+
+const pruebaImpresion = () => {
+  let prueba = filPokeType();
+  document.getElementById("probando").innerHTML(prueba);
+};
 
 
-const pkm = "Pikachu"; //document.getElementById("PokeFind").value;
+
+
+/*filterByType (pokemon, type) {
+  const filterType = [];
+  for(let i= 0; i < pokemon.length; i++){
+    for(let t=0; t < pokemon[i].type.length; t++){
+      if (pokemon[i].type[t] === type){
+        filterType.push(pokemon[i]);
+*/
+
 
 /*const buscar = () => {
   let pokemon = "Pikachu";
@@ -14,17 +51,17 @@ const pkm = "Pikachu"; //document.getElementById("PokeFind").value;
 
 
 //Funcion para iterar con for y buscar pokemon. 
-/*const findPoke = (dataPoke,namePokemon) => {
-  //let dataPoke = POKEMON.pokemon;
-  for (let i=0; i<dataPoke.length; i++) {
-    //let namePokemon = "Pikachu";
-    let allPokemon = dataPoke[i];
-    if (namePokemon === allPokemon.name){
-    namePokemon};  
-    console.log(namePokemon);
+/*const findPoke = () => {
+  let dataPokemon = POKEMON.pokemon;
+  let condition = "Pikachu";
+  for (let i=0; i<dataPokemon.length; i++) {
+    let allPokemon = dataPokemon[i];
+    if (allPokemon.name === condition){
+    allPokemon.name};  
+    console.log(allPokemon.name);
   }
-};
-findPoke(POKEMON.pokemon, "ivysaur");*/
+};*/
+
 
 
 //Funcion para encontrar un pokemon en especifico, con sus diferentes caracteristicas LA CHIDA
@@ -44,48 +81,10 @@ findPoke(POKEMON.pokemon, "ivysaur");*/
   //};
 //document.getElementById("findPkemon").addEventListener("click",findPokemon());
 
-//Funcion para filtrar 
-/*const filPokemon = (dataPokemon,tipPoken) => { 
-  dataPokemon.filter(function(poke){
-    if (poke.type[0] === tipPoken || poke.type[1] === tipPoken){
-      document.getElementById("imageFilPokem").src = poke.img
-      console.log(poke.type);
-    }
-  })
-};
-console.log(filPokemon(dataPokemon,tipPoken));*/
-
-//Nueva funcion para filtrar por tipo
-const filPokeType = () => {
-  const tipPoken = "Grass";
-  const dataPokemon = POKEMON.pokemon;
-  const typePoke = dataPokemon.filter (data => data.type[0] === tipPoken || data.type[1] === tipPoken)
-  const items = typePoke.map(type => "" + type.name);  
-  return items; 
-    
-};
-
-console.log(filPokeType());
+ 
 
 
 
-/*const printFilPokemon = (dataPokemon,) => {
-  const addPokemon = document.createElement ("div");
-}*/
-
-/*const dataPkm = (tipo); {
-  return tipo === "Grass";
-};
-
-const filterPokemon = () => {
-  const pkm = "Grass" //document.getElementById("PokeFind").value;
-  const dataPokemon = POKEMON.pokemon;
-  data.filter(dataPkm);
-};*/
 
 
-//const example = () => {
-//  return 'example';
-// };
 
-//window.example = example;

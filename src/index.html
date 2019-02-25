@@ -7,23 +7,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
   <h1> </h1>
+  
   <body>
-    <div id="root"></div>
-    <!-- <script src="./data/pokemon/pokemon.js"></script> -->
-    <div id="card" class="flexBox">
+   
+    <div id="card" class="flexBox" style="display:block">
       <input type="text" id="PokeFind" class="messageBox" placeholder="Buscar">
-      <button id="findPkemon" class="button1">Pokelist</button>
+      <button id="findPkemon" class="button1">Encontrar</button>
+      <button id="pokelist" class="button1">Pokelist</button>
+      <p id="probando">HOLA PROBANDO PROBANDO</p>
+    </div>
+
+    <div id="cardPokemon" class="flexBox" style="display:none">
       <p id="namePokeFind"></p>
       <p id="heightPokeFind"></p>
       <p id="weightPokeFind"></p>
       <p id="typePokeFind"></p>
       <p id="weaknessesPokeFind"></p>
       <img id="imagePokeFind" src=" ">
-      <img id="imageFilPokem" src=" ">
+      <button id="backStar" class="button1">Inicio</button>
+      <button id="backpokelist" class="button1">Pokelist</button>
+    </div>
+
+    <div id="listPokemon" class="flexBox" style="display:none">
+      <button id="filterGrass" class="button1" value="grass">Planta</button>
+      <button id="filterGrass" class="button1" value="poison">Veneno</button>
+      <button id="filterGrass" class="button1" value="fire">Fuego</button>
+      <button id="filterGrass" class="button1" value="water">Agua</button>
+      <button id="filterGrass" class="button1" value="bug">Bicho</button>
+      <button id="filterGrass" class="button1" value="normal">Normal</button>
+      <button id="filterGrass" class="button1" value="ground">Tierra</button>
+      <button id="filterGrass" class="button1" value="electric">Electrico</button>
+      <button id="filterGrass" class="button1" value="ghost">Fantasma</button>
+      <button id="filterGrass" class="button1" value="flying">Volador</button>
+      <button id="filterGrass" class="button1" value="fairy">Hada</button>
+      <button id="filterGrass" class="button1" value="fighting">Peleador</button>
+      <button id="filterGrass" class="button1" value="psychic">Psiquico</button>
+      <button id="filterGrass" class="button1" value="rock">Roca</button>
+      <button id="filterGrass" class="button1" value="steel">Acero</button>
+      <button id="filterGrass" class="button1" value="ice">Hielo</button>
+      <button id="star" class="button1">Inicio</button>
     </div>
 
     <script src="./data/pokemon/pokemon.js"></script>
     <script src="data.js"></script>
     <script src="main.js"></script>
+  
   </body>
 </html>
