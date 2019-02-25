@@ -5,8 +5,8 @@ const pageStar = () => {
     document.getElementById("listPokemon").style.display="none";
 };
 
-document.getElementById("backStar").addEventListener("click",pageStar);
-document.getElementById("star").addEventListener("click",pageStar);
+document.getElementById("backStart").addEventListener("click",pageStar);
+document.getElementById("start").addEventListener("click",pageStar);
 
 const pageFindPoke = () => { 
     document.getElementById("card").style.display="none";
