@@ -32,4 +32,4 @@ document.getElementById("backpokelist").addEventListener("click",pokelist);
     console.log(pokefind);
     //return pokefind;
 };
-document.getElementById("findPkemon").addEventListener("click",searchPokemon);*/
+document.getElementById("findPkemon").addEventListener("click",searchPokemon);*/ 

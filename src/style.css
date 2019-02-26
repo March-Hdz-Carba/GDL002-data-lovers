@@ -49,30 +49,82 @@ body {
         padding-bottom: 7px;
         padding-left: 20px;
         text-align: center;
-        width:30%;
-        height:40%;
+        width:20%;
+        height:50%;
         -webkit-box-align: center;
 };
 
+.button2{
+    background-color: rgba(94, 107, 116, 0.8);
+        font-family: "helvetica";
+        font-size: 1.0rem;
+        color: white;
+        border: 0px solid white;
+        border-radius: 8px;
+        padding-top: 7px;
+        padding-right: 20px;
+        padding-bottom: 7px;
+        padding-left: 20px;
+        text-align: center;
+        width:20%;
+        height:50%;
+        -webkit-box-align: center;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+
+}
 
 .messageBox {
-    width:20%;
-    height:30%;
+    width: 20%;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-image: url('searchicon.png');
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 20%;
+    margin-left: 20%;
+    align-items: center;
+}
+
+.typesOfPokemons{
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
 
 
-};
 
+}
+.secondScreen{
+    background-image: url(https://akimg0.ask.fm/wallpapers/105/008/699/original/13461_2560x1600__desktopnexus.com_.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    max-width: 100%;
+    background-attachment: fixed;
+    margin: 0;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 20%;
+    align-items: center;
+}
+
+}
 .Grass{
     background-image: url(https://4.bp.blogspot.com/-FFHmSO8Cegk/WflFks98uDI/AAAAAAAAARA/X-tD61Sgzt81aAydHR1a_zfKGNoXuEOOgCLcBGAs/s1600/planta.jpg);
     background-position: center center;
-    background-repeat: no-repeat;
-    width: 1050px;
-    height:1200px;
-};
-
-.Poison{
-    background-image: url(https://pikablog2017.files.wordpress.com/2017/12/4c6c3d7f26b1bc786cb963765528bd9a4d61fc8c_hq.jpg);
-};
+    height:100px;
+}
 
 .Fire{
     background-image: url(https://1.bp.blogspot.com/-wgjRR3kqH2w/WflFeqws0uI/AAAAAAAAAQw/X8szYQvJEacXDcuWmjKYgXhzK95pyZTGACLcBGAs/s1600/fuego.jpg);
@@ -83,7 +135,6 @@ body {
 };
 
 .Bug{
-    background-image: url(https://pikablog2017.files.wordpress.com/2017/10/e8ae89b17b8e266d603bb2dde190820f4268beb5_hq.jpg?w=700&h=&crop=1);
 };
 
 .Normal{
