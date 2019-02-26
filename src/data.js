@@ -9,28 +9,41 @@
   }
   
 }*/
-
-let tarjeta = document.getElementById("listaPoke");
+let card = document.getElementById("listaPoke");
 
 //Template dinamico para tarjeta
-function pokeDinamico(cadaPokemon){
-let tarjetaDinamica = `
-<div id= "info" class="cadaPokemon">
-<h1 class= pokeName">${cadaPokemon.name}</h1>
-<img src="${cadaPokemon.img}">
+function dinamicPoke(onePokemon){
+let dinamiCard = `
+<div id= "info" class="onePokemon">
+<h1 class= pokeName">${onePokemon.name}</h1>
+<img src="${onePokemon.img}">
 </div>
 `;
-return tarjetaDinamica;
+return dinamiCard;
 }
 
-const mostrarCartas = (data, HTMLElement) => {
-let contenedor = " ";
-for (let cadaPokemon of data) {
-contenedor = contenedor + pokeDinamico(cadaPokemon);
+const showCards = (data, HTMLElement) => {
+let pokemonSpace = " ";
+for (let onePokemon of data) {
+pokemonSpace = pokemonSpace + dinamicPoke(onePokemon);
 }
-tarjeta.innerHTML = contenedor;
+card.innerHTML = pokemonSpace;
 }
-mostrarCartas(POKEMON.pokemon, tarjeta);
+showCards(POKEMON.pokemon, card);
+
+
+
+const pruebaImpresion = (items) => {
+  console.log(items);
+  const prueba = document.getElementById("prueba");
+  const parrafo = document.createElement("P");
+  const contenidoParrafo = document.createTextNode("Hola");
+  parrafo.appendChild(contenidoParrafo);
+  prueba.appendChild(parrafo);
+  //let prueba = filPokeType();
+  //document.getElementById("probando").innerHTML(prueba);
+};
+
 
 //Nueva funcion para filtrar por tipo
 const filPokeType = () => {
@@ -48,9 +61,9 @@ const filPokeType = () => {
 
 
 
+
 //Funcion para iterar con for y buscar pokemon. 
 /*const findPoke = () => {
-  let dataPokemon = POKEMON.pokemon;
   let condition = "Pikachu";
   for (let i=0; i<dataPokemon.length; i++) {
     let allPokemon = dataPokemon[i];
@@ -62,8 +75,6 @@ const filPokeType = () => {
 
 
 
-
- 
 
 
 
