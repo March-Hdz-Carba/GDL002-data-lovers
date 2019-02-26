@@ -11,29 +11,49 @@
 }*/
 
 
-const pruebaImpresion = (items) => {
+/*const pruebaImpresion = (items) => {
   console.log(items);
+  const tipPokePrueba = "Grass"
+  for(i=0; i<=items.length; i++) {
+    if (items[i]===tipPokePrueba){
+      const markup = `
+      <div class="pokemoFiltrados">
+        <h2>
+          ${items.name}
+        </h2>
+        <img src=${items.img}>
+      </div>
+      `;
+      document.body.innerHTML = markup;
+    }  
+  }
+  markup= document.innerHTML()
+
   const prueba = document.getElementById("prueba");
-  const parrafo = document.createElement("P");
-  const contenidoParrafo = document.createTextNode("Hola");
-  parrafo.appendChild(contenidoParrafo);
+  const parrafo = document.createElement("img");
+  const atributo = document.createAttribute("src");
+  atributo.value = url ("www.serebii.net/pokemongo/pokemon/004.png");
   prueba.appendChild(parrafo);
-  //let prueba = filPokeType();
-  //document.getElementById("probando").innerHTML(prueba);
-};
+  parrafo.setAttributeNode(atributo);
+  //parrafo.src = "chamander.jpg"
+  //const contenidoParrafo = document.createTextNode("Hola");
+  //parrafo.appendChild(contenidoParrafo);
+  //prueba.appendChild(parrafo);
+};*/
 
 
 //Nueva funcion para filtrar por tipo
-const filPokeType = () => {
-    const tipPoken = "Fire";
-    const dataPokemon = POKEMON.pokemon;
+const filPokeType = (dataPokemon,tipPoken) => {
+    //const tipPoken = "Fire";
+    //const dataPokemon = POKEMON.pokemon;
     const typePoke = dataPokemon.filter (data => data.type[0] === tipPoken || data.type[1] === tipPoken)
+    console.log(typePoke);
     const items = typePoke.map(type => "" + type.name + type.img); 
     pruebaImpresion(items);
   return items; 
-    
+    //return Object.value(items);
 };
- console.log(filPokeType());
+ console.log(filPokeType(POKEMON.pokemon, "Fire"));
 
 
 
@@ -49,9 +69,6 @@ const filPokeType = () => {
   }
 }*/
 
-const pokeFilImg = (dataPokemon,) => {
-  for (let )
-}
 
 
 /*filterByType (pokemon, type) {
