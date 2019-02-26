@@ -27,7 +27,21 @@ const pruebaImpresion = () => {
   document.getElementById("probando").innerHTML(prueba);
 };
 
+/*function fillElements (pokemonList, divElement){
+  for(let i=0; i<pokemonList.length; i++) {
+    let divPokemon = document.createElement("div");
+    divPokemon.className = "pokemon";
+    divPokemon.innerHTML = "<button><img src='" + pokemonList[i].img + "'></button>" + "<p> </p>"+ pokemonList[i].name;
 
+    // callback function that prints/shows pokemon information
+    divPokemon.addEventListener("click", ()=>showPokemonInfo(pokemonList[i]));
+    divElement.insertAdjacentElement("beforeend", divPokemon);
+  }
+}*/
+
+const pokeFilImg = (dataPokemon,) => {
+  for (let )
+}
 
 
 /*filterByType (pokemon, type) {
