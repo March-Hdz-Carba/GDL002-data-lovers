@@ -10,22 +10,32 @@
   
 }*/
 
+
+const pruebaImpresion = (items) => {
+  console.log(items);
+  const prueba = document.getElementById("prueba");
+  const parrafo = document.createElement("P");
+  const contenidoParrafo = document.createTextNode("Hola");
+  parrafo.appendChild(contenidoParrafo);
+  prueba.appendChild(parrafo);
+  //let prueba = filPokeType();
+  //document.getElementById("probando").innerHTML(prueba);
+};
+
+
 //Nueva funcion para filtrar por tipo
 const filPokeType = () => {
-  const tipPoken = "Grass";
-  const dataPokemon = POKEMON.pokemon;
-  const typePoke = dataPokemon.filter (data => data.type[0] === tipPoken || data.type[1] === tipPoken)
-  const items = typePoke.map(type => "" + type.name);  
+    const tipPoken = "Fire";
+    const dataPokemon = POKEMON.pokemon;
+    const typePoke = dataPokemon.filter (data => data.type[0] === tipPoken || data.type[1] === tipPoken)
+    const items = typePoke.map(type => "" + type.name + type.img); 
+    pruebaImpresion(items);
   return items; 
     
 };
+ console.log(filPokeType());
 
-console.log(filPokeType());
 
-const pruebaImpresion = () => {
-  let prueba = filPokeType();
-  document.getElementById("probando").innerHTML(prueba);
-};
 
 /*function fillElements (pokemonList, divElement){
   for(let i=0; i<pokemonList.length; i++) {
