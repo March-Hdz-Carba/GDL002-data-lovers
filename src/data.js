@@ -9,6 +9,30 @@
   }
   
 }*/
+let tarjeta = document.getElementById("listaPoke");
+
+//Template dinamico para tarjeta
+function pokeDinamico(cadaPokemon){
+let tarjetaDinamica = `
+<div id= "info" class="cadaPokemon">
+<h1 class= pokeName">${cadaPokemon.name}</h1>
+<img src="${cadaPokemon.img}">
+</div>
+`;
+return tarjetaDinamica;
+}
+
+const mostrarCartas = (data, HTMLElement) => {
+let contenedor = " ";
+for (let cadaPokemon of data) {
+contenedor = contenedor + pokeDinamico(cadaPokemon);
+}
+tarjeta.innerHTML = contenedor;
+}
+mostrarCartas(POKEMON.pokemon, tarjeta);
+
+
+
 
 
 const pruebaImpresion = (items) => {
@@ -25,8 +49,8 @@ const pruebaImpresion = (items) => {
 
 //Nueva funcion para filtrar por tipo
 const filPokeType = () => {
-    const tipPoken = "Fire";
-    const dataPokemon = POKEMON.pokemon;
+    let tipPoken = "Fire";
+    let dataPokemon = POKEMON.pokemon;
     const typePoke = dataPokemon.filter (data => data.type[0] === tipPoken || data.type[1] === tipPoken)
     const items = typePoke.map(type => "" + type.name + type.img); 
     pruebaImpresion(items);
