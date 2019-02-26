@@ -9,29 +9,27 @@
   }
   
 }*/
-let tarjeta = document.getElementById("listaPoke");
+let card = document.getElementById("listaPoke");
 
 //Template dinamico para tarjeta
-function pokeDinamico(cadaPokemon){
-let tarjetaDinamica = `
-<div id= "info" class="cadaPokemon">
-<h1 class= pokeName">${cadaPokemon.name}</h1>
-<img src="${cadaPokemon.img}">
+function dinamicPoke(onePokemon){
+let dinamiCard = `
+<div id= "info" class="onePokemon">
+<h1 class= pokeName">${onePokemon.name}</h1>
+<img src="${onePokemon.img}">
 </div>
 `;
-return tarjetaDinamica;
+return dinamiCard;
 }
 
-const mostrarCartas = (data, HTMLElement) => {
-let contenedor = " ";
-for (let cadaPokemon of data) {
-contenedor = contenedor + pokeDinamico(cadaPokemon);
+const showCards = (data, HTMLElement) => {
+let pokemonSpace = " ";
+for (let onePokemon of data) {
+pokemonSpace = pokemonSpace + dinamicPoke(onePokemon);
 }
-tarjeta.innerHTML = contenedor;
+card.innerHTML = pokemonSpace;
 }
-mostrarCartas(POKEMON.pokemon, tarjeta);
-
-
+showCards(POKEMON.pokemon, card);
 
 
 
@@ -64,25 +62,6 @@ const filPokeType = () => {
 
 
 
-/*filterByType (pokemon, type) {
-  const filterType = [];
-  for(let i= 0; i < pokemon.length; i++){
-    for(let t=0; t < pokemon[i].type.length; t++){
-      if (pokemon[i].type[t] === type){
-        filterType.push(pokemon[i]);
-*/
-
-
-/*const buscar = () => {
-  let pokemon = "Pikachu";
-  let dataPoke = POKEMON.pokemon;
-  for (let i=0; i<dataPoke.length; i++) {
-    let allPokemon = dataPoke[i];
-    if (pokemon.length === allPokemon.name.length)
-  }
-    console.log()
-}*/
-
 
 //Funcion para iterar con for y buscar pokemon. 
 /*const findPoke = () => {
@@ -98,24 +77,6 @@ const filPokeType = () => {
 
 
 
-//Funcion para encontrar un pokemon en especifico, con sus diferentes caracteristicas LA CHIDA
-/*const findPokemon = (dataPokemon,pkm) => {
-  dataPokemon.find(function(poke){
-    if (poke.name === pkm) {
-    document.getElementById("namePokeFind").innerHTML = poke.name
-    document.getElementById("heightPokeFind").innerHTML = poke.height
-    document.getElementById("weightPokeFind").innerHTML = poke.weight
-    document.getElementById("typePokeFind").innerHTML = poke.type//[0] + "," + " " + poke.type[1]
-    document.getElementById("weaknessesPokeFind").innerHTML = poke.weaknesses//[0] + "," + " " + poke.weaknesses[1]+ "," + " " + poke.weaknesses[2]+ "," + " " + poke.weaknesses[3]+ "," + " " + poke.weaknesses[4]+ "," + " " + poke.weaknesses[5]
-    document.getElementById("imagePokeFind").src = poke.img
-    } else /*if (poke.name !== pkm)*///{console.log("Pokemon No encontrado")
-  //      }
-  //    }
-  //  )
-  //};
-//document.getElementById("findPkemon").addEventListener("click",findPokemon());
-
- 
 
 
 
