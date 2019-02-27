@@ -13,50 +13,45 @@ let card = document.getElementById("listaPoke");
 
 //Template dinamico para tarjeta
 function dinamicPoke(onePokemon){
-let dinamiCard = `
-<div id= "info" class="onePokemon">
-<h1 class= pokeName">${onePokemon.name}</h1>
-<img src="${onePokemon.img}">
-</div>
-`;
+  let dinamiCard = `
+    <div id= "info" class="onePokemon">
+      <h1 class= pokeName">${onePokemon.name}</h1>
+      <img src="${onePokemon.img}">
+    </div>
+  `;
 return dinamiCard;
-}
-
-const showCards = (data, HTMLElement) => {
-let pokemonSpace = " ";
-for (let onePokemon of data) {
-pokemonSpace = pokemonSpace + dinamicPoke(onePokemon);
-}
-card.innerHTML = pokemonSpace;
-}
-showCards(POKEMON.pokemon, card);
-
-
-
-const pruebaImpresion = (items) => {
-  console.log(items);
-  const prueba = document.getElementById("prueba");
-  const parrafo = document.createElement("P");
-  const contenidoParrafo = document.createTextNode("Hola");
-  parrafo.appendChild(contenidoParrafo);
-  prueba.appendChild(parrafo);
-  //let prueba = filPokeType();
-  //document.getElementById("probando").innerHTML(prueba);
 };
 
+const showCards = (data,card) => {
+  let pokemonSpace = " ";
+    for (let onePokemon of data) {
+      pokemonSpace = pokemonSpace + dinamicPoke(onePokemon);
+      }
+    card.innerHTML = pokemonSpace;
+   return pokemonSpace; 
+};
 
 //Nueva funcion para filtrar por tipo
-const filPokeType = () => {
-    let tipPoken = "Fire";
-    let dataPokemon = POKEMON.pokemon;
-    const typePoke = dataPokemon.filter (data => data.type[0] === tipPoken || data.type[1] === tipPoken)
-    console.log(typePoke);
-    const items = typePoke.map(type => "" + type.name + type.img); 
-    pruebaImpresion(items);
-    return items; 
-    
+const filPokeType = (dataPokemon,condition) => {
+      console.log();
+      const typePoke = dataPokemon.filter (data => data.type[0] === condition || data.type[1] === condition)
+      console.log(typePoke);
+      const items = typePoke.map(type => "" + type.name + type.img); 
+      showCards(typePoke, card);
+    return items;     
 };
- console.log(filPokeType());
+
+let arrayButtons = Array.from(document.getElementsByClassName("typeButton"));
+  
+for(let i=0; i <= arrayButtons.length; i++) {
+  let buttonsValue = arrayButtons[i];
+  buttonsValue.addEventListener("click",() => {
+    let condition = buttonsValue.value;
+    console.log(condition);
+    let filter = filPokeType(POKEMON.pokemon,condition); 
+    showCards(filter);
+  })
+}
 
 
 

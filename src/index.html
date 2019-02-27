@@ -10,47 +10,45 @@
   
   <body>
    <!-- <div id= "ayuda" class="help"> -->
-    <div id="listaPoke" class="listaPoke"></div>
 
-     <div id="card" class="SecondScreen" style="display:block">
+     <section id="card" class="SecondScreen" style="display:block">
       <input type="text" id="PokeFind" class="messageBox" placeholder="Buscar">
-      <button id="findPkemon" class="button1">Encontrar</button>
-      <button id="pokelist" class="button1">Pokelist</button>
-    </div>
+      <button id="findPkemon" class="button1"><img src="images/Boton buscar.png" width="110" height="50"></button>
+      <button id="pokelist" class="button1"><img src="images/Boton pokelist.png" width="130" height="50"></button>
+     </section>
 
-    <div id="cardPokemon" class="typesOfPokemons" style="display:none">
+    <section id="cardPokemon" class="typesOfPokemons" style="display:none">
       <p id="namePokeFind"></p>
       <p id="heightPokeFind"></p>
       <p id="weightPokeFind"></p>
       <p id="typePokeFind"></p>
       <p id="weaknessesPokeFind"></p>
       <img id="imagePokeFind" src=" ">
-      <button id="backStart" class="button2">Inicio</button>
-      <button id="backpokelist" class="button2">Pokelist</button>
-    </div>
+      <button id="backStart" class="button2"><img src="images/inicio boton.png" width="100" height="50"></button>
+      <button id="backpokelist" class="button2"><img src="images/Boton pokelist.png" width="110" height="50"></button>
+    </section>
 
-    <div id="listPokemon" class="flexBox" style="display:none">
-      <button id="Grass" class="Grass" >Planta</button>
-      <button id="Poison" class="Poison">Veneno</button>
-      <button id="Fire" class="Fire">Fuego</button>
-      <button id="Water" class="Water">Agua</button>
-      <button id="Bug" class="Bug">Bicho</button>
-      <button id="Normal" class="Normal">Normal</button>
-      <button id="Ground" class="Ground">Tierra</button>
-      <button id="Electric" class="Electric">Electrico</button>
-      <button id="Ghost" class="Ghost">Fantasma</button>
-      <button id="Flyer" class="Flyer">Volador</button>
-      <button id="Fairy" class="Fairy">Hada</button>
-      <button id="Fighter" class="Fighter">Peleador</button>
-      <button id="Psychic" class="Psychic">Psiquico</button>
-      <button id="Rock" class="Rock">Roca</button>
-      <button id="Steel" class="Steel">Acero</button>
-      <button id="Ice" class="Ice">Hielo</button>
-      <button id="start" class="button1">Inicio</button>
+    <section id="listPokemon" class="flexBox" style="display:none">
+      <button value="Grass" class="typeButton"><img src="images/boton grass.jpg" width="80"></button>
+      <button value="Poison" class="typeButton"><img src="images/boton veneno.jpg" width="80"></button>
+      <button value="Fire" class="typeButton"><img src="images/boton fuego.jpg" width="80"></button>
+      <button value="Water" class="typeButton"><img src="images/boton agua.jpg" width="80"></button>
+      <button value="Bug" class="typeButton"><img src="images/boton bicho.jpg" width="80"></button>
+      <button value="Normal" class="typeButton"><img src="images/boton normal.jpg" width="80"></button>
+      <button value="Ground" class="typeButton"><img src="images/boton tierra.jpg" width="80"></button>
+      <button value="Electric" class="typeButton"><img src="images/boton electrico.jpg" width="80"></button>
+      <button value="Ghost" class="typeButton"><img src="images/boton fantasma.jpg" width="80"></button>
+      <button value="Flying" class="typeButton"><img src="images/boton flying.jpg" width="80"></button>
+      <button value="Dragon" class="typeButton"><img src="images/boton dragon.jpg" width="80"></button>
+      <button value="Fighting" class="typeButton"><img src="images/boton luchador.jpg" width="80"></button>
+      <button value="Psychic" class="typeButton"><img src="images/Boton psiquico.jpg" width="80"></button>
+      <button value="Rock" class="typeButton"><img src="images/boton roca.jpg" width="80"></button>
+      <button value="Ice" class="typeButton"><img src="images/boton hielo.jpg" width="80"></button>
+      <button id="start" class="button1"><img src="images/inicio boton.png" width="100" height="50"></button>
       
       <!-- sección imgs -->
-      <div id="prueba"></div>
-    </div>
+      <div id="listaPoke" class="listaPoke"></div>
+    </section>
     
 
     <script src="./data/pokemon/pokemon.js"></script>
