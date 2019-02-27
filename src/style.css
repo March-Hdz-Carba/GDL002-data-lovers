@@ -12,7 +12,7 @@ body {
 
 @media only screen and (max-width: 500px) {
     body{
-        background : url("http://subirimagen.me/uploads/20190222090147.jpg");
+        background : url("https://github.com/March-Hdz-Carba/GDL002-data-lovers/blob/master/src/images/background%20celu.jpg?raw=true");
         height: 100vh;
         background-position: center center;
         background-repeat: no-repeat;
@@ -22,7 +22,6 @@ body {
         -moz-background-size: cover;
         -o-background-size: cover;
         background-size: cover;
-        margin-top: 50%;
     }
 };
 
@@ -31,14 +30,13 @@ body {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-between;
     margin-top: 20%;
-    align-items: center;
 
   };
 
   .button1 {
-        background-color: rgba(94, 107, 116, 0.8);
+        background-color:#79C9FA;
         font-family: "helvetica";
         font-size: 1.0rem;
         color: white;
@@ -51,11 +49,10 @@ body {
         text-align: center;
         width:20%;
         height:50%;
-        -webkit-box-align: center;
 };
 
 .button2{
-    background-color: rgba(94, 107, 116, 0.8);
+    background-color: #79C9FA;
         font-family: "helvetica";
         font-size: 1.0rem;
         color: white;
@@ -67,7 +64,7 @@ body {
         padding-left: 20px;
         text-align: center;
         width:20%;
-        height:50%;
+        margin-top: 10%;
         -webkit-box-align: center;
         flex-direction: column;
         flex-wrap: wrap;
@@ -75,7 +72,15 @@ body {
         align-items: center;
 
 }
+.buttonHelp{
+    flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        align-items:flex-start ;
 
+
+
+}
 .messageBox {
     width: 20%;
     box-sizing: border-box;
@@ -104,78 +109,10 @@ body {
 
 
 }
-.secondScreen{
-    background-image: url(https://akimg0.ask.fm/wallpapers/105/008/699/original/13461_2560x1600__desktopnexus.com_.jpg);
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    max-width: 100%;
-    background-attachment: fixed;
-    margin: 0;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    margin-top: 20%;
-    align-items: center;
+
+.typeButton{
+
+
+
+    
 }
-
-.Grass{
-    background-image: url(https://4.bp.blogspot.com/-FFHmSO8Cegk/WflFks98uDI/AAAAAAAAARA/X-tD61Sgzt81aAydHR1a_zfKGNoXuEOOgCLcBGAs/s1600/planta.jpg);
-    background-position: center center;
-    height:100px;
-}
-
-.Fire{
-    background-image: url(https://1.bp.blogspot.com/-wgjRR3kqH2w/WflFeqws0uI/AAAAAAAAAQw/X8szYQvJEacXDcuWmjKYgXhzK95pyZTGACLcBGAs/s1600/fuego.jpg);
-};
-
-.Water{
-    background-image: url(https://pikablog2017.files.wordpress.com/2017/10/tipo-agua.jpg?w=700&h=&crop=1);
-};
-
-.Bug{
-};
-
-.Normal{
-    background-image: url(https://3.bp.blogspot.com/-AXg7BsCd2T0/WflOww8PsiI/AAAAAAAAARs/OTVX4ZJp74o-vUZFyWG3eqtpAWTJMoFLwCLcBGAs/s1600/normal.jpg);
-};
-
-.Ground{
-    background-image: url(https://pikablog2017.files.wordpress.com/2017/10/28cb2b1307d223ddd21fa3c162033082b64837b8_hq.jpg?w=700&h=);
-};
-
-.Electric{
-    background-image: url(https://1.bp.blogspot.com/-tCEmSe1LqRw/WflFZuCIBBI/AAAAAAAAAQk/Z59O7LqzPxUtFZ3Y7XXPoy7Vk1dy_gwTwCLcBGAs/s1600/electrico.jpg);
-};
-
-.Ghost{
-    background-image: url(https://4.bp.blogspot.com/-J6bvBJWLRPw/WflFaiYTEII/AAAAAAAAAQo/ISVp4zqpPUEFaI7I2bAbDnkAYERbTVy_wCLcBGAs/s1600/fantasma.jpg);
-};
-
-.Flyer{
-    background-image: url(https://pikablog2017.files.wordpress.com/2017/10/c4eb58d752de61ab92e5f6e594660efb0bdc2b61_hq.jpg?w=556&h=556&crop=1);
-};
-
-.Fairy{
-    background-image: url(https://pm1.narvii.com/6154/4ac8f1f708c63b2d29483284e437af66f2f1fd29_hq.jpg);
-};
-
-.Fighter{
-    background-image: url(https://3.bp.blogspot.com/-nENqaj7vJ3U/WflFgjFYK0I/AAAAAAAAAQ4/g16T0Fr8iy8dDdBtB-YXJtoAtpSHwl-GACLcBGAs/s1600/lucha.jpg);
-};
-
-.Psychic{
-    background-image: url(https://2.bp.blogspot.com/-UEreiD9nvxw/WflFn5-BYCI/AAAAAAAAARE/g7wrSF60QT8aqtv3jFEGr7O5ts7GyyqGACLcBGAs/s1600/psiquico.jpg);
-};
-
-.Rock{
-    background-image: url(https://pikablog2017.files.wordpress.com/2017/10/8159436a86f809a099a76a433b9b140463fdb5fa_hq.jpg?w=700&h=&crop=1);
-};
-
-.Steel{
-    background-image: url(https://2.bp.blogspot.com/-pI4vl9N2dVc/WflFTrkG9rI/AAAAAAAAAQY/HpBW9S4wllM3PDqWJlsD3qM5e5BISuacACLcBGAs/s1600/acero.jpg);
-};
-
-.Ice{
-    background-image: url(https://pikablog2017.files.wordpress.com/2017/10/vir_367334_27438_a_que_tipo_elemental_de_pokemon_estas_mas_asociado.jpg?w=700&h=&crop=1);
-};

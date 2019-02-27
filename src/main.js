@@ -22,7 +22,7 @@ const pokelist = () => {
 };
 
 document.getElementById("pokelist").addEventListener("click",pokelist);
-document.getElementById("backpokelist").addEventListener("click",pokelist);
+document.getElementById("backPokelist").addEventListener("click",pokelist);
 
 /*const searchPokemon = () => {
     const dataPokemon = POKEMON.pokemon;
