@@ -1,7 +1,12 @@
+* {
+    margin: 0;
+    padding: 0;
+}
 
 body {
-    background: url("https://github.com/CaroMG/GDL002-data-lovers/blob/master/src/images/background.jpg?raw=true");
-    background-position: center center;
+    
+    background-image: url(https://github.com/March-Hdz-Carba/GDL002-data-lovers/blob/master/src/images/background.jpg?raw=true);
+    background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     max-width: 100%;
@@ -10,10 +15,9 @@ body {
     
 }; 
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width:500px) {
     body{
-        background : url("https://github.com/March-Hdz-Carba/GDL002-data-lovers/blob/master/src/images/background%20celu.jpg?raw=true");
-        height: 100vh;
+        background-image: url(https://github.com/March-Hdz-Carba/GDL002-data-lovers/blob/master/src/images/background%20celu.jpg?raw=true);
         background-position: center center;
         background-repeat: no-repeat;
         background-size: cover;
@@ -24,44 +28,45 @@ body {
         background-size: cover;
     }
 };
+ 
 
-
-  .flexBox {
+.conteiner{
     display: flex;
+    background: black;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
     margin-top: 20%;
+  }
 
-  };
+.listaPoke{
+    display: flex;
+    flex direction: row;
+    flex wrap: wrap reverse;
+
+  }
 
   .button1 {
         background-color:#79C9FA;
         font-family: "helvetica";
         font-size: 1.0rem;
-        color: white;
-        border: 0px solid white;
         border-radius: 8px;
-        padding-top: 7px;
-        padding-right: 20px;
-        padding-bottom: 7px;
-        padding-left: 20px;
-        text-align: center;
-        width:20%;
-        height:50%;
+        margin:45;
+        border-collapse: collapse;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 3%;
+        margin-left: 30%;
 };
 
 .button2{
-    background-color: #79C9FA;
+    background-color:transparent;
         font-family: "helvetica";
         font-size: 1.0rem;
         color: white;
         border: 0px solid white;
         border-radius: 8px;
-        padding-top: 7px;
-        padding-right: 20px;
-        padding-bottom: 7px;
-        padding-left: 20px;
         text-align: center;
         width:20%;
         margin-top: 10%;
@@ -73,29 +78,30 @@ body {
 
 }
 .buttonHelp{
-    flex-direction: row;
+    flex-direction: flex-end;
         flex-wrap: wrap;
         justify-content: flex-end;
-        align-items:flex-start ;
-
-
+        align-items:flex-end ;
+        border-collapse: collapse;
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin-top: 3%;
+        margin-left: 30%;
 
 }
 .messageBox {
     width: 20%;
     box-sizing: border-box;
-    border: 2px solid #ccc;
+    border: 2px solid white;
     border-radius: 4px;
     font-size: 16px;
-    background-color: white;
-    background-image: url('searchicon.png');
-    background-position: 10px 10px; 
+    background-color: transparent;
     background-repeat: no-repeat;
     padding: 12px 20px 12px 40px;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
-    margin-top: 20%;
+    margin-top: 15%;
     margin-left: 20%;
     align-items: center;
 }
@@ -114,5 +120,5 @@ body {
 
 
 
-    
+
 }
