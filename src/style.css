@@ -179,3 +179,41 @@ body {
 .Ice{
     background-image: url(https://pikablog2017.files.wordpress.com/2017/10/vir_367334_27438_a_que_tipo_elemental_de_pokemon_estas_mas_asociado.jpg?w=700&h=&crop=1);
 };
+
+/*Estilos para Flip Card*/
+/*.flip-container{
+    cursor: pointer;
+    height: 150px;
+    perspective: 600;
+    position: relative;
+    width: 150px;
+  }
+
+.card {
+    height: 100%;
+    position: absolute;
+    transform-style: preserve-3d;
+    transition: all 1s ease-in-out;
+    width: 100%;
+  };
+
+  .card:hover {
+    transform: rotateY(180deg);
+  };
+
+  .card .front {
+    backface-visibility: hidden;
+    border-radius: 6px;
+    height: 100%;
+    position: absolute;
+    overflow: hidden;
+    width: 100%;
+  }
+
+  .card .back {
+    background: #eaeaed;
+    color: #0087cc;
+    line-height: 150px;
+    text-align: center;
+    transform: rotateY(180deg);
+  }*/

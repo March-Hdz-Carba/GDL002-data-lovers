@@ -11,17 +11,28 @@
 }*/
 let card = document.getElementById("listaPoke");
 
-//Template dinamico para tarjeta
+//Template dinamico para botones con pokemones filtrados
 function dinamicPoke(onePokemon){
-  let dinamiCard = `
-    <div id= "info" class="onePokemon">
-      <h1 class= pokeName">${onePokemon.name}</h1>
-      <img src="${onePokemon.img}">
+  let dinamiCard =`
+    <div class="flip-container">
+      <div id="card1" class="card">
+        <div class="front">
+          <h2>${onePokemon.name}</h2>
+          <img src="${onePokemon.img}">
+        </div>
+        <div class="back">
+          <p id="heightPokeFind">${onePokemon.height}</p>
+          <p id="weightPokeFind">${onePokemon.weight}</p>
+          <p id="typePokeFind">${onePokemon.type}</p>
+          <p id="weaknessesPokeFind">${onePokemon.weaknesses}</p>
+        </div>
+      </div>
     </div>
-  `;
-return dinamiCard;
+    `; 
+  return dinamiCard;
 };
 
+//Imprime los pokemones filtrados en el template dinamico
 const showCards = (data,card) => {
   let pokemonSpace = " ";
     for (let onePokemon of data) {
@@ -42,7 +53,8 @@ const filPokeType = (dataPokemon,condition) => {
 };
 
 let arrayButtons = Array.from(document.getElementsByClassName("typeButton"));
-  
+console.log(arrayButtons); 
+
 for(let i=0; i <= arrayButtons.length; i++) {
   let buttonsValue = arrayButtons[i];
   buttonsValue.addEventListener("click",() => {
@@ -51,9 +63,41 @@ for(let i=0; i <= arrayButtons.length; i++) {
     let filter = filPokeType(POKEMON.pokemon,condition); 
     showCards(filter);
   })
-}
+};
+
+/*let pokeArrayButtons = Array.from(document.getElementsByClassName("pokeButton"));
+console.log(pokeArrayButtons);
+
+for(let i=0; i <= pokeArrayButtons.length; i++) {
+  let pokeButtonCard = pokeArrayButtons[i];
+  pokeButtonCard.addEventListener("click",() => {
+    let condition = pokeButtonCard.id;
+    console.log(condition);
+    let filterPokeCard = filPokeType(POKEMON.pokemon,condition);
+    showPokeCard(filterPokeCard);
+  })
+}*/
 
 
+//Imprime los pokemones filtrados en el template dinamico. PRUEBA PARA IMPRIMIR LA INFO DE CADA POKEMON
+/*const showPokeCard = (namePoke) => {
+  let cardPokemon = " ";
+    for (let i=0; i <= namePoke.length; i++) {
+      cardPokemon = namePoke[i] += cardPokemon;
+      let pokeInformation = `
+        <div><p id="namePokeFind">${}</p>
+        <p id="heightPokeFind"></p>
+        <p id="weightPokeFind"></p>
+        <p id="typePokeFind"></p>
+        <p id="weaknessesPokeFind"></p>
+        <img id="imagePokeFind" src=" "> 
+        `
+
+      pokemonSpace = pokemonSpace + dinamicPoke(onePokemon);
+      }
+    card.innerHTML = pokemonSpace;
+   return pokemonSpace; 
+};*/
 
 
 
