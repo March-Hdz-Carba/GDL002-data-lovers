@@ -3,28 +3,38 @@
   <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <link rel="stylesheet" href="estilo.css" type="text/css" />
     <title>Data Lovers</title>
     <link rel="stylesheet" href="style.css"/>
   </head>
   
   <body>
-    <div id= "container" class="acomodar">
-      <button id="help" class="flexBox"><img src="images/botonayuda.png" width="130" height="50"></button>
-     <section id="card" style="display:block">
-      <input type="text" id="PokeFind" class="messageBox" placeholder="Buscar">
+
+      <div class="col">
+          <div class="producto prod-first">  
+            <img src="images/botonayuda.png" width="110" />
+             <div class="mask">  
+               <h2>¡Bienvenida a PocketMon!</h2>  
+               <p>En este sitio podrás encontrar la información de cualquier pokémon de la región de Kanto.</p>
+               <p>1. Sólo da clic en el botón Pokelist y selecciona el tipo de pokémon que desees conocer. 
+             </div>  
+          </div>
+         </div> 
+
+    <div id= "card" class="conteiner" style= "display:block">
       <button id="findPkemon" class="button1"><img src="images/botonbuscar.jpg" width="110" height="50"></button>
       <button id="pokelist" class="button1"><img src="images/botonpokelist.png" width="110" height="50"></button>
-     </section>
+     </div>
 
-    <section id="cardPokemon" class="typesOfPokemons" style="display:none">
+      <section id="cardPokemon" class="typesOfPokemons" style="display:none">
       <p id="namePokeFind"></p>
       <p id="heightPokeFind"></p>
       <p id="weightPokeFind"></p>
       <p id="typePokeFind"></p>
       <p id="weaknessesPokeFind"></p>
       <img id="imagePokeFind" src=" ">
-      <button id="backStart" class="button2"><img src="images/inicio boton.png" width="100" height="50"></button>
-      <button id="backPokelist" class="button2"><img src="images/Boton pokelist.png" width="100" height="50"></button>
+      <button id="backStart" class="button2"><img src="images/botoninicio.png" width="100" height="50"></button>
+      <button id="backPokelist" class="button2"><img src="images/botonpokelist.png" width="100" height="50"></button>
     </section>
 
     <section id="listPokemon" class="flexBox" style="display:none">
@@ -43,7 +53,7 @@
       <button value="Psychic" class="typeButton"><img src="images/Boton psiquico.jpg" width="80"></button>
       <button value="Rock" class="typeButton"><img src="images/boton roca.jpg" width="80"></button>
       <button value="Ice" class="typeButton"><img src="images/boton hielo.jpg" width="80"></button>
-      <button id="start" class="button1"><img src="images/inicio boton.png" width="100" height="50"></button>
+      <button id="start" class="button1"><img src="images/botoninicio.png" width="140" height="80"></button>
       
       <!-- sección imgs -->
       <div id="listaPoke" class="listaPoke"></div>
