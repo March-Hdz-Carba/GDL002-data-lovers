@@ -75,6 +75,7 @@ body {
         flex-wrap: wrap;
         justify-content: space-between;
         align-items: center;
+        border-collapse: collapse;
 
 }
 .buttonHelp{
@@ -105,6 +106,7 @@ body {
     margin-left: 20%;
     align-items: center;
 }
+
 
 .typesOfPokemons{
     flex-direction: row;
