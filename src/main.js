@@ -1,4 +1,3 @@
-let card = document.getElementById("listaPoke");
 
 //Template dinamico para flip card con pokemones filtrados
 function dinamicPoke(onePokemon){
@@ -22,6 +21,8 @@ function dinamicPoke(onePokemon){
   };
   
   //Imprime los pokemones filtrados en el template dinamico
+  let card = document.getElementById("listaPoke");
+
 const showCards = (data,card) => {
     let pokemonSpace = " ";
       for (let onePokemon of data) {
@@ -67,12 +68,17 @@ document.getElementById("backPokelist").addEventListener("click",pokelist);
    let buttonsValue = arrayButtons[i];
    buttonsValue.addEventListener("click",() => {
      let condition = buttonsValue.value;
-     console.log(condition);
      let filter = filPokeType(POKEMON.pokemon,condition); 
      showCards(filter);
    })
  };  
 
+ //Funcion para order. Primer intento.
+/*let pokeFiltered = filPokeType (dataPokemon,condition);
+const orderPoke = () => {
+  let itemsPoke = filPokeType ();
+  console.log(itemsPoke);
+}*/
 
 
 /*const searchPokemon = () => {

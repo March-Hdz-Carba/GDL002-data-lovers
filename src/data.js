@@ -10,7 +10,6 @@
 
 //Nueva funcion para filtrar por tipo
 const filPokeType = (dataPokemon,condition) => {
-      console.log();
       const typePoke = dataPokemon.filter (data => data.type[0] === condition || data.type[1] === condition)
       console.log(typePoke);
       const items = typePoke.map(type => type.name); 
@@ -18,10 +17,11 @@ const filPokeType = (dataPokemon,condition) => {
     return items;     
 };
 
-//Fucion para order. Primer intento.
-const orderPoke = () => {
-  let itemsPoke =
-}
+
+//Funcion para order. Primer intento.
+/*const orderPoke = (pokemonesfiltrados,valor) => {
+  if (valor === )
+}*/
 
 
 
