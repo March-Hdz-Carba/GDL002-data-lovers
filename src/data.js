@@ -11,12 +11,12 @@
 }*/
 let card = document.getElementById("listaPoke");
 
-//Template dinamico para botones con pokemones filtrados
+//Template dinamico para flip card con pokemones filtrados
 function dinamicPoke(onePokemon){
   let dinamiCard =`
-    <div class="flip-container">
-      <div id="card1" class="card">
-        <div class="front">
+    <div class="card-container">
+      <div class="card">
+        <div class="side">
           <h2>${onePokemon.name}</h2>
           <img src="${onePokemon.img}">
         </div>
