@@ -4,7 +4,6 @@
 }
 
 body {
-    
     background-image: url(https://github.com/March-Hdz-Carba/GDL002-data-lovers/blob/master/src/images/background.jpg?raw=true);
     background-position: center;
     background-repeat: no-repeat;
@@ -103,6 +102,9 @@ body {
     align-items: center;
 }
 
+.listaPoke{
+
+}
 
 /*Estilos para Flip Card*/
 .card-container {
@@ -138,7 +140,7 @@ body {
     position: absolute;
     overflow: hidden;
     height: 200px;
-    width: 180px%;
+    width: 180px;
     align-self: auto;
   }
   .card .back {
@@ -149,7 +151,7 @@ body {
     transform: rotateY(180deg);
     backface-visibility: hidden;
     height: 200px;
-    width: 180;
+    width: 180px;
   }
 
  
