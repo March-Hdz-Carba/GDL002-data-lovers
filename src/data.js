@@ -1,27 +1,39 @@
 /*window.pokemon = {
-  filter : (dataPokemon, condition) => {
+  pokeFilter : (dataPokemon, condition) => {
     const typePoke = dataPokemon.filter (data => data.type[0] === condition || data.type[1] === condition)
+    console.log(typePoke);
     const items = typePoke.map(type => type.name);  
     console.log(items);
-    //return items  
+    return items;  
   }
   
 }*/
 
-//Nueva funcion para filtrar por tipo
-const filPokeType = (dataPokemon,condition) => {
+//Nueva funcion para filtrar por tipo. CHIDA
+const pokeFilter = (dataPokemon,condition) => {
       const typePoke = dataPokemon.filter (data => data.type[0] === condition || data.type[1] === condition)
       console.log(typePoke);
       const items = typePoke.map(type => type.name); 
-      showCards(typePoke, card);
+      showCards(typePoke);
+      console.log(items);
     return items;     
 };
 
 
 //Funcion para order. Primer intento.
-/*const orderPoke = (pokemonesfiltrados,valor) => {
-  if (valor === )
-}*/
+const sortPoke = (filpoke,orderValue) => {
+  if (orderValue === "a-z"){
+    return filpoke.sort((a,b)=>{
+      if(a.name > b.name){
+        return 1;
+      } if(a.name < b.name){
+        return -1;
+      } 
+    });
+  }
+    return 0;
+};
+
 
 
 

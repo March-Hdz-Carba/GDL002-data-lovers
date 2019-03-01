@@ -21,16 +21,20 @@ function dinamicPoke(onePokemon){
   };
   
   //Imprime los pokemones filtrados en el template dinamico
-  let card = document.getElementById("listaPoke");
-
-const showCards = (data,card) => {
+const showCards = (data) => {
+    let card = document.getElementById("listaPoke");
     let pokemonSpace = " ";
       for (let onePokemon of data) {
+          console.log("for");
         pokemonSpace = pokemonSpace + dinamicPoke(onePokemon);
         }
-      card.innerHTML = pokemonSpace;
+    //card.innerHTML = pokemonSpace;
+    document.getElementById("listaPoke").innerHTML=pokemonSpace;
      return pokemonSpace; 
-  };
+};
+
+  
+
 
 
 //Funciones de Botones, cambio de pantallas
@@ -62,23 +66,79 @@ document.getElementById("backPokelist").addEventListener("click",pokelist);
 
 //Para hacer arreglo con el valor de los botones para hacer filtrado segun tipo
  let arrayButtons = Array.from(document.getElementsByClassName("typeButton"));
- console.log(arrayButtons); 
  
- for(let i=0; i <= arrayButtons.length; i++) {
+ for(let i=0; i < arrayButtons.length; i++) {
    let buttonsValue = arrayButtons[i];
    buttonsValue.addEventListener("click",() => {
      let condition = buttonsValue.value;
-     let filter = filPokeType(POKEMON.pokemon,condition); 
-     showCards(filter);
+     //let filpoke = window.pokemon.pokeFilter(POKEMON.pokemon,condition);
+     let filpoke = pokeFilter(POKEMON.pokemon,condition); 
+     showCards(filpoke);
+     //orderPoke(filpoke);
    })
  };  
 
+ //Funcion para imprimir los pokemones filtrados AL PARECER FUNCIONA
+ /*function showCards (filpoke){
+   let result = filpoke.forEach(onePokemon => {
+    let dinamiCard =`
+    <div class="card-container">
+      <div class="card">
+        <div class="side">
+          <h2>${onePokemon.name}</h2>
+          <img alt="Pokemon" src="${onePokemon.img}">
+        </div>
+        <div class="back">
+          <p id="heightPokeFind">Talla:${onePokemon.height}</p>
+          <p id="weightPokeFind">Peso:${onePokemon.weight}</p>
+          <p id="typePokeFind">Tipo:${onePokemon.type}</p>
+          <p id="weaknessesPokeFind">Debilidades:${onePokemon.weaknesses}</p>
+        </div>
+      </div>
+    </div>
+    `; 
+      document.getElementById("listaPoke").innerHTML += dinamiCard;
+    });
+    return result;
+ };*/
+ 
+
+//Opcion para imprimir pokemones
+ /*let pokeShowFilt  
+ const showCards = (onePoke) => {
+   pokeShowFilt= window.pokeFilter(onePoke);
+   pokeShowFilt.map(element => { element;
+       let dinamiCard =`
+     <div class="card-container">
+       <div class="card">
+         <div class="side">
+           <h2>${onePokemon.name}</h2>
+           <img src="${onePokemon.img}">
+         </div>
+         <div class="back">
+           <p id="heightPokeFind">Talla:${onePokemon.height}</p>
+           <p id="weightPokeFind">Peso:${onePokemon.weight}</p>
+           <p id="typePokeFind">Tipo:${onePokemon.type}</p>
+           <p id="weaknessesPokeFind">Debilidades:${onePokemon.weaknesses}</p>
+         </div>
+       </div>
+     </div>
+     `; 
+       document.getElementById("listaPoke").innerHTML += dinamiCard;
+        
+       });
+       return pokeShowFilt; 
+   };*/
+
  //Funcion para order. Primer intento.
-/*let pokeFiltered = filPokeType (dataPokemon,condition);
-const orderPoke = () => {
-  let itemsPoke = filPokeType ();
-  console.log(itemsPoke);
-}*/
+ function orderPoke (filpoke) {
+    let howOrder = document.getElementById("pokemonOrder");
+    howOrder.addEventListener("click", () =>{
+        let orderValue = howOrder.value;
+        let ordenPoke = window.pokemon.sortPoke(filpoke,orderValue);
+        showCards (ordenPoke);   
+    })
+ };
 
 
 /*const searchPokemon = () => {
