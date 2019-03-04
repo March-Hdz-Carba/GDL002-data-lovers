@@ -1,29 +1,15 @@
-/*window.pokemon = {
-  pokeFilter : (dataPokemon, condition) => {
-    const typePoke = dataPokemon.filter (data => data.type[0] === condition || data.type[1] === condition)
-    console.log(typePoke);
-    const items = typePoke.map(type => type.name);  
-    console.log(items);
-    return items;  
-  }
-  
-}*/
-
-//Nueva funcion para filtrar por tipo. CHIDA
-const pokeFilter = (dataPokemon,condition) => {
+//Nueva funcion para filtrar por tipo.
+const filPokeType = (dataPokemon,condition) => {
       const typePoke = dataPokemon.filter (data => data.type[0] === condition || data.type[1] === condition)
       console.log(typePoke);
-      const items = typePoke.map(type => type.name); 
-      showCards(typePoke);
-      console.log(items);
-    return items;     
+    return typePoke;     
 };
 
 
-//Funcion para order. Primer intento.
-const sortPoke = (filpoke,orderValue) => {
+//Funcion para order. FUNCIONA.
+const sortPoke = (filter,orderValue) => {
   if (orderValue === "a-z"){
-    return filpoke.sort((a,b)=>{
+    return filter.sort((a,b)=>{
       if(a.name > b.name){
         return 1;
       } if(a.name < b.name){
@@ -34,19 +20,11 @@ const sortPoke = (filpoke,orderValue) => {
     return 0;
 };
 
+window.loversData = {
+  filPokeType: filPokeType,
+  sortPoke: sortPoke,
+};
 
-
-
-//Funcion para iterar con for y buscar pokemon. 
-/*const findPoke = () => {
-  let condition = "Pikachu";
-  for (let i=0; i<dataPokemon.length; i++) {
-    let allPokemon = dataPokemon[i];
-    if (allPokemon.name === condition){
-    allPokemon.name};  
-    console.log(allPokemon.name);
-  }
-};*/
 
 
 
