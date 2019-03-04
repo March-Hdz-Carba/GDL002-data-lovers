@@ -1,33 +1,3 @@
-;
-
-function poketmon(allPokemon){
-    let templateCard =`
-      <div class="card-container">
-        <div class="card">
-          <div class="side">
-            <h2>${allPokemon.name}</h2>
-            <img src="${allPokemon.img}">
-          </div>
-        </div>
-      </div>
-      `; 
-    return templateCard;
-  };
-
-  const allCards = (data,fullList) => {
-    let pokemonGap = " ";
-      for (let allPokemon of data) {
-        pokemonGap = pokemonGap + poketmon(allPokemon);
-        }
-      fullList.innerHTML = pokemonGap;
-      console.log(pokemonGap);
-     return pokemonGap; 
-  };
-
-
-
-let card = document.getElementById("listaPoke");
-
 //Template dinamico para flip card con pokemones filtrados
 function dinamicPoke(onePokemon){
     let dinamiCard =`
@@ -47,17 +17,77 @@ function dinamicPoke(onePokemon){
       </div>
       `; 
     return dinamiCard;
-  };
+  }
   
   //Imprime los pokemones filtrados en el template dinamico
-const showCards = (data,card) => {
+  let card = document.getElementById("listaPoke");
+
+  function showCards (data,card) {
     let pokemonSpace = " ";
       for (let onePokemon of data) {
         pokemonSpace = pokemonSpace + dinamicPoke(onePokemon);
         }
-      card.innerHTML = pokemonSpace;
+    card.innerHTML = pokemonSpace;
      return pokemonSpace; 
-  };
+}
+
+//Para hacer arreglo con el valor de los botones para hacer filtrado segun tipo
+let arrayButtons = Array.from(document.getElementsByClassName("typeButton"));
+const pokeData = POKEMON.pokemon;
+
+for(let i=0; i < arrayButtons.length; i++) {
+  let buttonsValue = arrayButtons[i];
+  buttonsValue.addEventListener("click",() => {
+    let condition = buttonsValue.value;
+    let filter = window.loversData.filPokeType(pokeData,condition); 
+    showCards(filter,card);
+    orderPoke(filter);
+  });
+}   
+
+//Funcion para order. FUNCIONA.
+const orderPoke = (filter) => {
+    let howOrder = document.getElementById("pokemonOrder");
+    howOrder.addEventListener("click", () =>{
+        let orderValue = howOrder.value;
+        let ordenPoke = window.loversData.sortPoke(filter,orderValue);
+        console.log(ordenPoke);
+        return ordenPoke;  
+    });
+ };
+
+const showOrderPoke = (poke) => {
+    let printPokeOrder = orderPoke(filter);
+    printPokeOrder.map(element => {element;
+        let dinamiCard =`
+        <div class="card-container">
+          <div class="card">
+            <div class="side">
+              <h2>${poke.name}</h2>
+              <img src="${poke.img}">
+            </div>
+            <div class="back">
+              <p id="heightPokeFind">Talla:${poke.height}</p>
+              <p id="weightPokeFind">Peso:${poke.weight}</p>
+              <p id="typePokeFind">Tipo:${poke.type}</p>
+              <p id="weaknessesPokeFind">Debilidades:${poke.weaknesses}</p>
+            </div>
+          </div>
+        </div>
+        `; 
+        document.getElementById("listaPoke").innerHTML += dinamiCard;
+    });
+    orderPoke(filter);
+};
+
+document.getElementById("pokemonOrder").addEventListener("click",showOrderPoke);
+
+const averCandyPrint = () => {
+  let averResul = window.loversData.averCandy(POKEMON.pokemon);
+  document.getElementById("candy").innerHTML = averResul;
+  console.log(averResul);
+};
+document.getElementById("candys").addEventListener("click",averCandyPrint);
 
 
 //Funciones de Botones, cambio de pantallas
@@ -85,33 +115,3 @@ const pokelist = () => {
 
 document.getElementById("pokelist").addEventListener("click",pokelist);
 document.getElementById("backPokelist").addEventListener("click",pokelist);
-
-
-//Para hacer arreglo con el valor de los botones para hacer filtrado segun tipo
- let arrayButtons = Array.from(document.getElementsByClassName("typeButton"));
-
-
- for(let i=0; i <= arrayButtons.length; i++) {
-   let buttonsValue = arrayButtons[i];
-   buttonsValue.addEventListener("click",() => {
-     let condition = buttonsValue.value;
-     console.log(condition);
-     let filter = filPokeType(POKEMON.pokemon,condition); 
-    // showCards(filter);
-   })
- };  
-
-
-
-/*const searchPokemon = () => {
-    const dataPokemon = POKEMON.pokemon;
-    const condition = document.getElementById("PokeFind").value;
-    let pokefind = window.pokemon.filter(dataPokemon, condition);
-    document.getElementById("namePokeFind").innerHTML = pokefind;
-    console.log(pokefind);
-    //return pokefind;
-};
-document.getElementById("findPkemon").addEventListener("click",searchPokemon);*/ 
-
-
- 

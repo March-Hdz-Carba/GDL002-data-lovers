@@ -1,5 +1,5 @@
 require('../src/data.js');
-const pokemon = require()
+const pokemon = require("../src/data/pokemon/pokemon.json");
 
 describe('Pokemon', () => {
   it('should be an object', () => {

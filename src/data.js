@@ -1,40 +1,41 @@
-/*window.pokemon = {
-  filter : (dataPokemon, condition) => {
-    const typePoke = dataPokemon.filter (data => data.type[0] === condition || data.type[1] === condition)
-    const items = typePoke.map(type => type.name);  
-    console.log(items);
-    //return items  
-  }
-  
-}*/
-
-//Nueva funcion para filtrar por tipo
+//Nueva funcion para filtrar por tipo.
 const filPokeType = (dataPokemon,condition) => {
-      console.log();
-      const typePoke = dataPokemon.filter (data => data.type[0] === condition || data.type[1] === condition)
+      const typePoke = dataPokemon.filter (data => data.type[0] === condition || data.type[1] === condition);
       console.log(typePoke);
-      const items = typePoke.map(type => type.name); 
-      showCards(typePoke, card);
-    return items;     
+      return typePoke;     
 };
 
-//Fucion para order. Primer intento.
-//const orderPoke = () => {
-  //let itemsPoke =
-//}
-
-
-
-//Funcion para iterar con for y buscar pokemon. 
-/*const findPoke = () => {
-  let condition = "Pikachu";
-  for (let i=0; i<dataPokemon.length; i++) {
-    let allPokemon = dataPokemon[i];
-    if (allPokemon.name === condition){
-    allPokemon.name};  
-    console.log(allPokemon.name);
+//Funcion para order. FUNCIONA.
+const sortPoke = (filter,orderValue) => {
+  if (orderValue === "a-z"){
+    return filter.sort((a,b)=>{
+      if(a.name > b.name){
+        return 1;
+      } if(a.name < b.name){
+        return -1;
+      } 
+    });
   }
-};*/
+    return 0;
+};
+
+//Funcion para promediar cantidad de candy_count
+const averCandy = (pokeData) => {
+  let pokeAll = pokeData;
+    pokeAll.filter(elemt => elemt.candy_count);
+    pokeAll.map(elemt => elemt.candy_count);
+    let averPokeRedu = pokeAll.reduce(function(accumalatore,valueNext){accumalatore+valueNext});
+    let averPokeCandy = averPokeRedu/pokeAll.length;
+    console.log(averPokeRedu);
+    return averPokeCandy
+};
+
+window.loversData = {
+  filPokeType: filPokeType,
+  sortPoke: sortPoke,
+  averCandy: averCandy
+};
+
 
 
 
