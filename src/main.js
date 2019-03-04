@@ -115,6 +115,3 @@ const pokelist = () => {
 
 document.getElementById("pokelist").addEventListener("click",pokelist);
 document.getElementById("backPokelist").addEventListener("click",pokelist);
-
-
-

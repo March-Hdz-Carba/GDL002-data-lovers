@@ -5,7 +5,6 @@ const filPokeType = (dataPokemon,condition) => {
       return typePoke;     
 };
 
-
 //Funcion para order. FUNCIONA.
 const sortPoke = (filter,orderValue) => {
   if (orderValue === "a-z"){
