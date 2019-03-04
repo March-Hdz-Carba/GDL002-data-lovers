@@ -1,3 +1,4 @@
+
 //Funciones de Botones, cambio de pantallas
 const pageStar = () => {
   document.getElementById("card").style.display="block";
