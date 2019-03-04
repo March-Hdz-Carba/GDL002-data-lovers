@@ -1,10 +1,9 @@
 //Nueva funcion para filtrar por tipo.
 const filPokeType = (dataPokemon,condition) => {
-      const typePoke = dataPokemon.filter (data => data.type[0] === condition || data.type[1] === condition)
+      const typePoke = dataPokemon.filter (data => data.type[0] === condition || data.type[1] === condition);
       console.log(typePoke);
-    return typePoke;     
+      return typePoke;     
 };
-
 
 //Funcion para order. FUNCIONA.
 const sortPoke = (filter,orderValue) => {
@@ -20,9 +19,21 @@ const sortPoke = (filter,orderValue) => {
     return 0;
 };
 
+//Funcion para promediar cantidad de candy_count
+const averCandy = (pokeData) => {
+  let pokeAll = pokeData;
+    pokeAll.filter(elemt => elemt.candy_count);
+    pokeAll.map(elemt => elemt.candy_count);
+    let averPokeRedu = pokeAll.reduce(function(accumalatore,valueNext){accumalatore+valueNext});
+    let averPokeCandy = averPokeRedu/pokeAll.length;
+    console.log(averPokeRedu);
+    return averPokeCandy
+};
+
 window.loversData = {
   filPokeType: filPokeType,
   sortPoke: sortPoke,
+  averCandy: averCandy
 };
 
 
