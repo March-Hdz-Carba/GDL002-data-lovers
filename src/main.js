@@ -1,3 +1,31 @@
+;
+
+function poketmon(allPokemon){
+    let templateCard =`
+      <div class="card-container">
+        <div class="card">
+          <div class="side">
+            <h2>${allPokemon.name}</h2>
+            <img src="${allPokemon.img}">
+          </div>
+        </div>
+      </div>
+      `; 
+    return templateCard;
+  };
+
+  const allCards = (data,fullList) => {
+    let pokemonGap = " ";
+      for (let allPokemon of data) {
+        pokemonGap = pokemonGap + poketmon(allPokemon);
+        }
+      fullList.innerHTML = pokemonGap;
+      console.log(pokemonGap);
+     return pokemonGap; 
+  };
+
+
+
 let card = document.getElementById("listaPoke");
 
 //Template dinamico para flip card con pokemones filtrados
@@ -61,15 +89,15 @@ document.getElementById("backPokelist").addEventListener("click",pokelist);
 
 //Para hacer arreglo con el valor de los botones para hacer filtrado segun tipo
  let arrayButtons = Array.from(document.getElementsByClassName("typeButton"));
- console.log(arrayButtons); 
- 
+
+
  for(let i=0; i <= arrayButtons.length; i++) {
    let buttonsValue = arrayButtons[i];
    buttonsValue.addEventListener("click",() => {
      let condition = buttonsValue.value;
      console.log(condition);
      let filter = filPokeType(POKEMON.pokemon,condition); 
-     showCards(filter);
+    // showCards(filter);
    })
  };  
 
@@ -84,3 +112,6 @@ document.getElementById("backPokelist").addEventListener("click",pokelist);
     //return pokefind;
 };
 document.getElementById("findPkemon").addEventListener("click",searchPokemon);*/ 
+
+
+ 

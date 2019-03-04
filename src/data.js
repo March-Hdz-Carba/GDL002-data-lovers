@@ -19,9 +19,9 @@ const filPokeType = (dataPokemon,condition) => {
 };
 
 //Fucion para order. Primer intento.
-const orderPoke = () => {
-  let itemsPoke =
-}
+//const orderPoke = () => {
+  //let itemsPoke =
+//}
 
 
 
