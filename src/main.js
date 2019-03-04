@@ -17,7 +17,7 @@ function dinamicPoke(onePokemon){
       </div>
       `; 
     return dinamiCard;
-  };
+  }
   
   //Imprime los pokemones filtrados en el template dinamico
   let card = document.getElementById("listaPoke");
@@ -29,34 +29,34 @@ function dinamicPoke(onePokemon){
         }
     card.innerHTML = pokemonSpace;
      return pokemonSpace; 
-};
+}
 
 //Para hacer arreglo con el valor de los botones para hacer filtrado segun tipo
 let arrayButtons = Array.from(document.getElementsByClassName("typeButton"));
- 
+const pokeData = POKEMON.pokemon;
+
 for(let i=0; i < arrayButtons.length; i++) {
   let buttonsValue = arrayButtons[i];
   buttonsValue.addEventListener("click",() => {
     let condition = buttonsValue.value;
-    //let filpoke = window.pokemon.pokeFilter(POKEMON.pokemon,condition);
-    let filter = loversData.filPokeType(POKEMON.pokemon,condition); 
+    let filter = window.loversData.filPokeType(pokeData,condition); 
     showCards(filter,card);
-    orderPoke (filter);
-  })
-};   
+    orderPoke(filter);
+  });
+}   
 
 //Funcion para order. FUNCIONA.
 const orderPoke = (filter) => {
     let howOrder = document.getElementById("pokemonOrder");
     howOrder.addEventListener("click", () =>{
         let orderValue = howOrder.value;
-        let ordenPoke = loversData.sortPoke(filter,orderValue);
+        let ordenPoke = window.loversData.sortPoke(filter,orderValue);
         console.log(ordenPoke);
         return ordenPoke;  
-    })
+    });
  };
 
-const showOrderPoke = () => {
+const showOrderPoke = (poke) => {
     let printPokeOrder = orderPoke(filter);
     printPokeOrder.map(element => {element;
         let dinamiCard =`
@@ -81,6 +81,13 @@ const showOrderPoke = () => {
 };
 
 document.getElementById("pokemonOrder").addEventListener("click",showOrderPoke);
+
+const averCandyPrint = () => {
+  let averResul = window.loversData.averCandy(POKEMON.pokemon);
+  document.getElementById("candy").innerHTML = averResul;
+  console.log(averResul);
+};
+document.getElementById("candys").addEventListener("click",averCandyPrint);
 
 
 //Funciones de Botones, cambio de pantallas
