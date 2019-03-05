@@ -24,10 +24,10 @@ const averCandy = (pokeData) => {
   let pokeAll = pokeData;
     pokeAll.filter(elemt => elemt.candy_count);
     pokeAll.map(elemt => elemt.candy_count);
-    let averPokeRedu = pokeAll.reduce(function(accumalatore,valueNext){accumalatore+valueNext});
+    let averPokeRedu = pokeAll.reduce(function(accumalatore,valueNext){return accumalatore+valueNext;});
     let averPokeCandy = averPokeRedu/pokeAll.length;
     console.log(averPokeRedu);
-    return averPokeCandy
+    return averPokeCandy;
 };
 
 window.loversData = {
