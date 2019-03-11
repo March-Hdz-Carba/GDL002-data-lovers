@@ -78,43 +78,19 @@ const orderPoke = (filter) => {
     howOrder.addEventListener("click", () =>{
         let orderValue = howOrder.value;
         let ordenPoke = window.loversData.sortPoke(filter,orderValue);
+        showCards(ordenPoke,card);
         console.log(ordenPoke);
         return ordenPoke;  
     });
  };
 
-const showOrderPoke = (poke) => {
-    let printPokeOrder = orderPoke(filter);
-    printPokeOrder.map(element => {element;
-        let dinamiCard =`
-        <div class="card-container">
-          <div class="card">
-            <div class="side">
-              <h2>${poke.name}</h2>
-              <img src="${poke.img}">
-            </div>
-            <div class="back">
-              <p id="heightPokeFind">Talla:${poke.height}</p>
-              <p id="weightPokeFind">Peso:${poke.weight}</p>
-              <p id="typePokeFind">Tipo:${poke.type}</p>
-              <p id="weaknessesPokeFind">Debilidades:${poke.weaknesses}</p>
-            </div>
-          </div>
-        </div>
-        `; 
-        document.getElementById("listaPoke").innerHTML += dinamiCard;
-    });
-    orderPoke(filter);
-};
 
-document.getElementById("pokemonOrder").addEventListener("click",showOrderPoke);
-
-const averCandyPrint = () => {
+/*const averCandyPrint = () => {
   let averResul = window.loversData.averCandy(POKEMON.pokemon);
   document.getElementById("candy").innerHTML = averResul;
   console.log(averResul);
 };
 document.getElementById("candys").addEventListener("click",averCandyPrint);
-
+*/
 
 

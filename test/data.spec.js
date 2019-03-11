@@ -1,16 +1,31 @@
 require('../src/data.js');
-const pokemon = require("../src/data/pokemon/pokemon.json");
+const POKEMON = require("../src/data/pokemon/pokemon.json");
+const pokemonGrassFilterMock = require("../src/data/pokemon/pokemonGrass.json");
 
 describe('Pokemon', () => {
   it('should be an object', () => {
-    expect(typeof pokemon).toBe('object');
+    expect(typeof POKEMON).toBe('object');
   });
 });
 
-    /*describe("Filtado", () => {
-      it ("should filter my Pokemon by name",() => {
-        expect(filterPokemon(pokemon, "nombre")).toBe();
+describe("filPokeType", () => {
+  it ("should be a function",() => {
+        expect(typeof loversData.filPokeType).toBe('function');
+  });
 
+  it ("should be a return an array when filter Grass",() => {
+        expect(loversData.filPokeType(POKEMON.pokemon,"Grass")).toEqual(pokemonGrassFilterMock);
   });
 });
-*/
+
+describe("sortPoke", () => {
+  it ("should be a function",() => {
+        expect(typeof loversData.sortPoke).toBe('function');
+  });
+
+  it ("should be return an order array when order filter Ice",() => {
+        expect(loversData.orderPoke())
+  })
+});
+
+

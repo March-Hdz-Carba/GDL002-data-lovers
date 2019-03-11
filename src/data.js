@@ -30,6 +30,7 @@ const averCandy = (pokeData) => {
     return averPokeCandy;
 };
 
+
 window.loversData = {
   filPokeType: filPokeType,
   sortPoke: sortPoke,
