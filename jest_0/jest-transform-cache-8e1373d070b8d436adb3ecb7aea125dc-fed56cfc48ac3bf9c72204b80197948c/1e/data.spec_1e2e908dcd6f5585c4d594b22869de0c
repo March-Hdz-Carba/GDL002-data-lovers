@@ -1,0 +1,32 @@
+c09bd28c6b866a0dd8ab118544783fb4
+require('../src/data.js');
+const POKEMON = require("../src/data/pokemon/pokemon.json");
+const pokemonGrassFilterMock = require("../src/data/pokemon/pokemonGrass.json");
+//const orderPokemonFilterDragon = require ("../src/data/pokemon/orderPokemonFilterDragon.json");
+
+describe('Pokemon', () => {
+  it('should be an object', () => {
+    expect(typeof POKEMON).toBe('object');
+  });
+});
+
+describe("filPokeType", () => {
+  it("should be a function", () => {
+    expect(typeof loversData.filPokeType).toBe('function');
+  });
+
+  it("should be a return an array when filter Grass", () => {
+    expect(loversData.filPokeType(POKEMON.pokemon, "Grass")).toEqual(pokemonGrassFilterMock);
+  });
+});
+
+describe("sortPoke", () => {
+  it("should be a function", () => {
+    expect(typeof loversData.sortPoke).toBe('function');
+  });
+
+  it("should be return an array when I sort dragon", () => {
+    expect(typeof loversData.sortPoke(loversData.filPokeType(POKEMON.pokemon, "Dragon"), 'a-z')).toBe('object');
+  });
+});
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImRhdGEuc3BlYy5qcyJdLCJuYW1lcyI6WyJyZXF1aXJlIiwiUE9LRU1PTiIsInBva2Vtb25HcmFzc0ZpbHRlck1vY2siLCJkZXNjcmliZSIsIml0IiwiZXhwZWN0IiwidG9CZSIsImxvdmVyc0RhdGEiLCJmaWxQb2tlVHlwZSIsInBva2Vtb24iLCJ0b0VxdWFsIiwic29ydFBva2UiXSwibWFwcGluZ3MiOiJBQUFBQSxRQUFRLGdCQUFSO0FBQ0EsTUFBTUMsVUFBVUQsUUFBUSxrQ0FBUixDQUFoQjtBQUNBLE1BQU1FLHlCQUF5QkYsUUFBUSx1Q0FBUixDQUEvQjtBQUNBOztBQUVBRyxTQUFTLFNBQVQsRUFBb0IsTUFBTTtBQUN4QkMsS0FBRyxxQkFBSCxFQUEwQixNQUFNO0FBQzlCQyxXQUFPLE9BQU9KLE9BQWQsRUFBdUJLLElBQXZCLENBQTRCLFFBQTVCO0FBQ0QsR0FGRDtBQUdELENBSkQ7O0FBTUFILFNBQVMsYUFBVCxFQUF3QixNQUFNO0FBQzVCQyxLQUFJLHNCQUFKLEVBQTJCLE1BQU07QUFDM0JDLFdBQU8sT0FBT0UsV0FBV0MsV0FBekIsRUFBc0NGLElBQXRDLENBQTJDLFVBQTNDO0FBQ0wsR0FGRDs7QUFJQUYsS0FBSSwrQ0FBSixFQUFvRCxNQUFNO0FBQ3BEQyxXQUFPRSxXQUFXQyxXQUFYLENBQXVCUCxRQUFRUSxPQUEvQixFQUF1QyxPQUF2QyxDQUFQLEVBQXdEQyxPQUF4RCxDQUFnRVIsc0JBQWhFO0FBQ0wsR0FGRDtBQUdELENBUkQ7O0FBVUFDLFNBQVMsVUFBVCxFQUFxQixNQUFNO0FBQ3pCQyxLQUFJLHNCQUFKLEVBQTJCLE1BQU07QUFDM0JDLFdBQU8sT0FBT0UsV0FBV0ksUUFBekIsRUFBbUNMLElBQW5DLENBQXdDLFVBQXhDO0FBQ0wsR0FGRDs7QUFJQUYsS0FBSSw4Q0FBSixFQUFtRCxNQUFNO0FBQ25EQyxXQUFPLE9BQU9FLFdBQVdJLFFBQVgsQ0FBcUJKLFdBQVdDLFdBQVgsQ0FBdUJQLFFBQVFRLE9BQS9CLEVBQXVDLFFBQXZDLENBQXJCLEVBQXdFLEtBQXhFLENBQWQsRUFBOEZILElBQTlGLENBQW1HLFFBQW5HO0FBQ0wsR0FGRDtBQUdELENBUkQiLCJmaWxlIjoiZGF0YS5zcGVjLmpzIiwic291cmNlc0NvbnRlbnQiOlsicmVxdWlyZSgnLi4vc3JjL2RhdGEuanMnKTtcbmNvbnN0IFBPS0VNT04gPSByZXF1aXJlKFwiLi4vc3JjL2RhdGEvcG9rZW1vbi9wb2tlbW9uLmpzb25cIik7XG5jb25zdCBwb2tlbW9uR3Jhc3NGaWx0ZXJNb2NrID0gcmVxdWlyZShcIi4uL3NyYy9kYXRhL3Bva2Vtb24vcG9rZW1vbkdyYXNzLmpzb25cIik7XG4vL2NvbnN0IG9yZGVyUG9rZW1vbkZpbHRlckRyYWdvbiA9IHJlcXVpcmUgKFwiLi4vc3JjL2RhdGEvcG9rZW1vbi9vcmRlclBva2Vtb25GaWx0ZXJEcmFnb24uanNvblwiKTtcblxuZGVzY3JpYmUoJ1Bva2Vtb24nLCAoKSA9PiB7XG4gIGl0KCdzaG91bGQgYmUgYW4gb2JqZWN0JywgKCkgPT4ge1xuICAgIGV4cGVjdCh0eXBlb2YgUE9LRU1PTikudG9CZSgnb2JqZWN0Jyk7XG4gIH0pO1xufSk7XG5cbmRlc2NyaWJlKFwiZmlsUG9rZVR5cGVcIiwgKCkgPT4ge1xuICBpdCAoXCJzaG91bGQgYmUgYSBmdW5jdGlvblwiLCgpID0+IHtcbiAgICAgICAgZXhwZWN0KHR5cGVvZiBsb3ZlcnNEYXRhLmZpbFBva2VUeXBlKS50b0JlKCdmdW5jdGlvbicpO1xuICB9KTtcblxuICBpdCAoXCJzaG91bGQgYmUgYSByZXR1cm4gYW4gYXJyYXkgd2hlbiBmaWx0ZXIgR3Jhc3NcIiwoKSA9PiB7XG4gICAgICAgIGV4cGVjdChsb3ZlcnNEYXRhLmZpbFBva2VUeXBlKFBPS0VNT04ucG9rZW1vbixcIkdyYXNzXCIpKS50b0VxdWFsKHBva2Vtb25HcmFzc0ZpbHRlck1vY2spO1xuICB9KTtcbn0pO1xuXG5kZXNjcmliZShcInNvcnRQb2tlXCIsICgpID0+IHtcbiAgaXQgKFwic2hvdWxkIGJlIGEgZnVuY3Rpb25cIiwoKSA9PiB7XG4gICAgICAgIGV4cGVjdCh0eXBlb2YgbG92ZXJzRGF0YS5zb3J0UG9rZSkudG9CZSgnZnVuY3Rpb24nKTtcbiAgfSk7XG5cbiAgaXQgKFwic2hvdWxkIGJlIHJldHVybiBhbiBhcnJheSB3aGVuIEkgc29ydCBkcmFnb25cIiwoKSA9PiB7XG4gICAgICAgIGV4cGVjdCh0eXBlb2YgbG92ZXJzRGF0YS5zb3J0UG9rZSgobG92ZXJzRGF0YS5maWxQb2tlVHlwZShQT0tFTU9OLnBva2Vtb24sXCJEcmFnb25cIikpLCAnYS16JykpLnRvQmUoJ29iamVjdCcpO1xuICB9KTtcbn0pO1xuXG5cbiJdfQ==

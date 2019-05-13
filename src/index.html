@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 
 <head>
   <meta charset="utf-8" />
@@ -11,52 +11,49 @@
 <body>
 
   <div id="card" class="conteiner" style="display:block">
-  <div class="col">
+    <div class="helpBotton"><img src="images/botonayuda.png"  alt="Ayuda"/></div> 
+  <!--
+    <div class="col">
     <div class="producto prod-first">
-      <img src="images/botonayuda.png" width="110" />
+      
       <div class="mask">
         <h2>¡Bienvenida a PocketMon!</h2>
         <p>En este sitio podrás encontrar la información de cualquier pokémon de la región de Kanto.</p>
         <p>1. Sólo da clic en el botón Pokelist y selecciona el tipo de pokémon que desees conocer.</p>
       </div>
     </div>
-  </div>
+    -->
 
-  
-    <button id="findPkemon" class="button1"><img src="images/botonbuscar.jpg" width="110" height="50"></button>
-    <button id="pokelist" class="button1"><img src="images/botonpokelist.png" width="110" height="50"></button>
+    <form><input id="namePoke" type="text" placeholder="Busca tú Pokemon" value="" ></form>
+    <button id="findPkemon" class="button1"><img src="images/botonbuscar.jpg" width="110" height="50" alt="Buscar"></button>
+    <button id="pokelist" class="button1"><img src="images/botonpokelist.png" width="110" height="50" alt="Lista Pokemones"></button>
   </div>
 
   <section id="cardPokemon" class="typesOfPokemons" style="display:none">
-    <p id="namePokeFind"></p>
-    <p id="heightPokeFind"></p>
-    <p id="weightPokeFind"></p>
-    <p id="typePokeFind"></p>
-    <p id="weaknessesPokeFind"></p>
-    <img id="imagePokeFind" src=" ">
-    <button id="backStart" class="button2"><img src="images/botoninicio.png" width="100" height="50"></button>
-    <button id="backPokelist" class="button2"><img src="images/botonpokelist.png" width="100" height="50"></button>
+    <section id="pokemon" class="searchPokemon"></section>
+    <button id="backStart" class="button2"><img src="images/botoninicio.png" width="100" height="50" alt="Inicio"></button>
+    <button id="backPokelist" class="button2"><img src="images/botonpokelist.png" width="100" height="50" alt="Lista Pokemones"></button>
   </section>
 
   <section id="listPokemon" class="flexBox" style="display:none">
-    <button value="Grass" class="typeButton"><img src="images/boton grass.jpg" width="80"></button>
-    <button value="Poison" class="typeButton"><img src="images/boton veneno.jpg" width="80"></button>
-    <button value="Fire" class="typeButton"><img src="images/boton fuego.jpg" width="80"></button>
-    <button value="Water" class="typeButton"><img src="images/boton agua.jpg" width="80"></button>
-    <button value="Bug" class="typeButton"><img src="images/boton bicho.jpg" width="80"></button>
-    <button value="Normal" class="typeButton"><img src="images/boton normal.jpg" width="80"></button>
-    <button value="Ground" class="typeButton"><img src="images/boton tierra.jpg" width="80"></button>
-    <button value="Electric" class="typeButton"><img src="images/boton electrico.jpg" width="80"></button>
-    <button value="Ghost" class="typeButton"><img src="images/boton fantasma.jpg" width="80"></button>
-    <button value="Flying" class="typeButton"><img src="images/boton flying.jpg" width="80"></button>
-    <button value="Dragon" class="typeButton"><img src="images/boton dragon.jpg" width="80"></button>
-    <button value="Fighting" class="typeButton"><img src="images/boton luchador.jpg" width="80"></button>
-    <button value="Psychic" class="typeButton"><img src="images/Boton psiquico.jpg" width="80"></button>
-    <button value="Rock" class="typeButton"><img src="images/boton roca.jpg" width="80"></button>
-    <button value="Ice" class="typeButton"><img src="images/boton hielo.jpg" width="80"></button>
-    <button id="start" class="button1"><img src="images/botoninicio.png" width="140" height="80"></button>
+    <button value="Grass" class="typeButton"><img src="images/botongrass.jpg" width="80" alt="Grass" class="typeButton" ></button>
+    <button value="Poison" class="typeButton"><img src="images/botonveneno.jpg" width="80" alt="Poison" class="typeButton"></button>
+    <button value="Fire" class="typeButton"><img src="images/botonfuego.jpg" width="80" alt="Fire" class="typeButton"></button>
+    <button value="Water" class="typeButton"><img src="images/botonagua.jpg" width="80" alt="Water" class="typeButton"></button>
+    <button value="Bug" class="typeButton"><img src="images/botonbicho.jpg" width="80" alt="Bug" class="typeButton"></button>
+    <button value="Normal" class="typeButton"><img src="images/botonnormal.jpg" width="80" alt="Normal" class="typeButton"></button>
+    <button value="Ground" class="typeButton"><img src="images/botontierra.jpg" width="80" alt="Ground" class="typeButton"></button>
+    <button value="Electric" class="typeButton"><img src="images/botonelectrico.jpg" width="80" alt="Electric" class="typeButton"></button>
+    <button value="Ghost" class="typeButton"><img src="images/botonfantasma.jpg" width="80" alt="Ghost" class="typeButton"></button>
+    <button value="Flying" class="typeButton"><img src="images/botonflying.jpg" width="80" alt="Flying" class="typeButton"></button>
+    <button value="Dragon" class="typeButton"><img src="images/botondragon.jpg" width="80" alt="Dragon" class="typeButton"></button>
+    <button value="Fighting" class="typeButton"><img src="images/botonluchador.jpg" width="80" alt="Fighting" class="typeButton"></button>
+    <button value="Psychic" class="typeButton"><img src="images/Botonpsiquico.jpg" width="80" alt="Psychic" class="typeButton"></button>
+    <button value="Rock" class="typeButton"><img src="images/botonroca.jpg" width="80" alt="Rock" class="typeButton"></button>
+    <button value="Ice" class="typeButton"><img src="images/botonhielo.jpg" width="80" alt="Ice" class="typeButton"></button>
+    <button id="start" class="button1"><img src="images/botoninicio.png" width="140" height="80" alt="Inicio"></button>
     <button id="pokemonOrder" value="a-z">Ordenar</button>
-
+    <p id="candy"></p>
     <!-- sección imgs -->
     <div id="listaPoke" class="listaPoke"></div>
   </section>

@@ -1,0 +1,57 @@
+99ad5eea3f8f0dc8651788dec9cbab8b
+require('../src/data.js');
+const POKEMON = require("../src/data/pokemon/pokemon.json");
+const pokemonGrassFilterMock = require("../src/data/pokemon/pokemonGrass.json");
+const orderPokemonFilterDragonMock = require("../src/data/pokemon/orderPokemonFilterDragon.json");
+const pikachuMock = require("../src/data/pokemon/pikachu.json");
+
+describe('Pokemon', () => {
+      it('should be an object', () => {
+            expect(typeof POKEMON).toBe('object');
+      });
+});
+
+describe("filPokeType", () => {
+      it("should be a function", () => {
+            expect(typeof loversData.filPokeType).toBe('function');
+      });
+
+      it("should be a return an array when filter Grass", () => {
+            expect(loversData.filPokeType(POKEMON.pokemon, "Grass")).toEqual(pokemonGrassFilterMock);
+      });
+});
+
+describe("sortPoke", () => {
+      it("should be a function", () => {
+            expect(typeof loversData.sortPoke).toBe('function');
+      });
+
+      it("should be return an array when I sort dragon", () => {
+            expect(typeof loversData.sortPoke(loversData.filPokeType(POKEMON.pokemon, "Dragon"), 'a-z')).toBe('object');
+      });
+
+      it("should be return an array in order alphabetic information when I sort dragon", () => {
+            expect(loversData.sortPoke(loversData.filPokeType(POKEMON.pokemon, "Dragon"), 'a-z')).toEqual(orderPokemonFilterDragonMock);
+      });
+});
+
+describe("averCandy", () => {
+      it("should be a function", () => {
+            expect(typeof loversData.averCandy).toBe('function');
+      });
+
+      it("should be a number", () => {
+            expect(loversData.averCandy(loversData.filPokeType(POKEMON.pokemon, "Dragon"))).toBe(62.5);
+      });
+});
+
+describe("findPokemon", () => {
+      it("should be a function", () => {
+            expect(typeof loversData.findPokemon).toBe('function');
+      });
+
+      it("should be return information about Pikachu if you find Pikachu", () => {
+            expect(loversData.findPokemon(POKEMON.pokemon, "Pikachu")).toEqual(pikachuMock);
+      });
+});
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImRhdGEuc3BlYy5qcyJdLCJuYW1lcyI6WyJyZXF1aXJlIiwiUE9LRU1PTiIsInBva2Vtb25HcmFzc0ZpbHRlck1vY2siLCJvcmRlclBva2Vtb25GaWx0ZXJEcmFnb25Nb2NrIiwicGlrYWNodU1vY2siLCJkZXNjcmliZSIsIml0IiwiZXhwZWN0IiwidG9CZSIsImxvdmVyc0RhdGEiLCJmaWxQb2tlVHlwZSIsInBva2Vtb24iLCJ0b0VxdWFsIiwic29ydFBva2UiLCJhdmVyQ2FuZHkiLCJmaW5kUG9rZW1vbiJdLCJtYXBwaW5ncyI6IkFBQUFBLFFBQVEsZ0JBQVI7QUFDQSxNQUFNQyxVQUFVRCxRQUFRLGtDQUFSLENBQWhCO0FBQ0EsTUFBTUUseUJBQXlCRixRQUFRLHVDQUFSLENBQS9CO0FBQ0EsTUFBTUcsK0JBQStCSCxRQUFTLG1EQUFULENBQXJDO0FBQ0EsTUFBTUksY0FBY0osUUFBUyxrQ0FBVCxDQUFwQjs7QUFFQUssU0FBUyxTQUFULEVBQW9CLE1BQU07QUFDeEJDLFNBQUcscUJBQUgsRUFBMEIsTUFBTTtBQUM5QkMsbUJBQU8sT0FBT04sT0FBZCxFQUF1Qk8sSUFBdkIsQ0FBNEIsUUFBNUI7QUFDRCxPQUZEO0FBR0QsQ0FKRDs7QUFNQUgsU0FBUyxhQUFULEVBQXdCLE1BQU07QUFDNUJDLFNBQUksc0JBQUosRUFBMkIsTUFBTTtBQUMzQkMsbUJBQU8sT0FBT0UsV0FBV0MsV0FBekIsRUFBc0NGLElBQXRDLENBQTJDLFVBQTNDO0FBQ0wsT0FGRDs7QUFJQUYsU0FBSSwrQ0FBSixFQUFvRCxNQUFNO0FBQ3BEQyxtQkFBT0UsV0FBV0MsV0FBWCxDQUF1QlQsUUFBUVUsT0FBL0IsRUFBdUMsT0FBdkMsQ0FBUCxFQUF3REMsT0FBeEQsQ0FBZ0VWLHNCQUFoRTtBQUNMLE9BRkQ7QUFHRCxDQVJEOztBQVVBRyxTQUFTLFVBQVQsRUFBcUIsTUFBTTtBQUN6QkMsU0FBSSxzQkFBSixFQUEyQixNQUFNO0FBQzNCQyxtQkFBTyxPQUFPRSxXQUFXSSxRQUF6QixFQUFtQ0wsSUFBbkMsQ0FBd0MsVUFBeEM7QUFDTCxPQUZEOztBQUlBRixTQUFJLDhDQUFKLEVBQW1ELE1BQU07QUFDbkRDLG1CQUFPLE9BQU9FLFdBQVdJLFFBQVgsQ0FBcUJKLFdBQVdDLFdBQVgsQ0FBdUJULFFBQVFVLE9BQS9CLEVBQXVDLFFBQXZDLENBQXJCLEVBQXdFLEtBQXhFLENBQWQsRUFBOEZILElBQTlGLENBQW1HLFFBQW5HO0FBQ0wsT0FGRDs7QUFJQUYsU0FBSSw4RUFBSixFQUFtRixNQUFNO0FBQ3ZGQyxtQkFBT0UsV0FBV0ksUUFBWCxDQUFxQkosV0FBV0MsV0FBWCxDQUF1QlQsUUFBUVUsT0FBL0IsRUFBdUMsUUFBdkMsQ0FBckIsRUFBd0UsS0FBeEUsQ0FBUCxFQUF1RkMsT0FBdkYsQ0FBK0ZULDRCQUEvRjtBQUNILE9BRkM7QUFHRCxDQVpEOztBQWNBRSxTQUFTLFdBQVQsRUFBc0IsTUFBTTtBQUMxQkMsU0FBSSxzQkFBSixFQUEyQixNQUFNO0FBQzNCQyxtQkFBTyxPQUFPRSxXQUFXSyxTQUF6QixFQUFvQ04sSUFBcEMsQ0FBeUMsVUFBekM7QUFDTCxPQUZEOztBQUlBRixTQUFJLG9CQUFKLEVBQTBCLE1BQU07QUFDMUJDLG1CQUFPRSxXQUFXSyxTQUFYLENBQXFCTCxXQUFXQyxXQUFYLENBQXVCVCxRQUFRVSxPQUEvQixFQUF1QyxRQUF2QyxDQUFyQixDQUFQLEVBQStFSCxJQUEvRSxDQUFvRixJQUFwRjtBQUNMLE9BRkQ7QUFHRCxDQVJEOztBQVVBSCxTQUFTLGFBQVQsRUFBd0IsTUFBTTtBQUM1QkMsU0FBSSxzQkFBSixFQUEyQixNQUFNO0FBQzNCQyxtQkFBTyxPQUFPRSxXQUFXTSxXQUF6QixFQUFzQ1AsSUFBdEMsQ0FBMkMsVUFBM0M7QUFDTCxPQUZEOztBQUlBRixTQUFJLGdFQUFKLEVBQXFFLE1BQU07QUFDekVDLG1CQUFPRSxXQUFXTSxXQUFYLENBQXVCZCxRQUFRVSxPQUEvQixFQUF1QyxTQUF2QyxDQUFQLEVBQTBEQyxPQUExRCxDQUFrRVIsV0FBbEU7QUFDSCxPQUZDO0FBR0QsQ0FSRCIsImZpbGUiOiJkYXRhLnNwZWMuanMiLCJzb3VyY2VzQ29udGVudCI6WyJyZXF1aXJlKCcuLi9zcmMvZGF0YS5qcycpO1xuY29uc3QgUE9LRU1PTiA9IHJlcXVpcmUoXCIuLi9zcmMvZGF0YS9wb2tlbW9uL3Bva2Vtb24uanNvblwiKTtcbmNvbnN0IHBva2Vtb25HcmFzc0ZpbHRlck1vY2sgPSByZXF1aXJlKFwiLi4vc3JjL2RhdGEvcG9rZW1vbi9wb2tlbW9uR3Jhc3MuanNvblwiKTtcbmNvbnN0IG9yZGVyUG9rZW1vbkZpbHRlckRyYWdvbk1vY2sgPSByZXF1aXJlIChcIi4uL3NyYy9kYXRhL3Bva2Vtb24vb3JkZXJQb2tlbW9uRmlsdGVyRHJhZ29uLmpzb25cIik7XG5jb25zdCBwaWthY2h1TW9jayA9IHJlcXVpcmUgKFwiLi4vc3JjL2RhdGEvcG9rZW1vbi9waWthY2h1Lmpzb25cIik7XG5cbmRlc2NyaWJlKCdQb2tlbW9uJywgKCkgPT4ge1xuICBpdCgnc2hvdWxkIGJlIGFuIG9iamVjdCcsICgpID0+IHtcbiAgICBleHBlY3QodHlwZW9mIFBPS0VNT04pLnRvQmUoJ29iamVjdCcpO1xuICB9KTtcbn0pO1xuXG5kZXNjcmliZShcImZpbFBva2VUeXBlXCIsICgpID0+IHtcbiAgaXQgKFwic2hvdWxkIGJlIGEgZnVuY3Rpb25cIiwoKSA9PiB7XG4gICAgICAgIGV4cGVjdCh0eXBlb2YgbG92ZXJzRGF0YS5maWxQb2tlVHlwZSkudG9CZSgnZnVuY3Rpb24nKTtcbiAgfSk7XG5cbiAgaXQgKFwic2hvdWxkIGJlIGEgcmV0dXJuIGFuIGFycmF5IHdoZW4gZmlsdGVyIEdyYXNzXCIsKCkgPT4ge1xuICAgICAgICBleHBlY3QobG92ZXJzRGF0YS5maWxQb2tlVHlwZShQT0tFTU9OLnBva2Vtb24sXCJHcmFzc1wiKSkudG9FcXVhbChwb2tlbW9uR3Jhc3NGaWx0ZXJNb2NrKTtcbiAgfSk7XG59KTtcblxuZGVzY3JpYmUoXCJzb3J0UG9rZVwiLCAoKSA9PiB7XG4gIGl0IChcInNob3VsZCBiZSBhIGZ1bmN0aW9uXCIsKCkgPT4ge1xuICAgICAgICBleHBlY3QodHlwZW9mIGxvdmVyc0RhdGEuc29ydFBva2UpLnRvQmUoJ2Z1bmN0aW9uJyk7XG4gIH0pO1xuXG4gIGl0IChcInNob3VsZCBiZSByZXR1cm4gYW4gYXJyYXkgd2hlbiBJIHNvcnQgZHJhZ29uXCIsKCkgPT4ge1xuICAgICAgICBleHBlY3QodHlwZW9mIGxvdmVyc0RhdGEuc29ydFBva2UoKGxvdmVyc0RhdGEuZmlsUG9rZVR5cGUoUE9LRU1PTi5wb2tlbW9uLFwiRHJhZ29uXCIpKSwgJ2EteicpKS50b0JlKCdvYmplY3QnKTtcbiAgfSk7XG5cbiAgaXQgKFwic2hvdWxkIGJlIHJldHVybiBhbiBhcnJheSBpbiBvcmRlciBhbHBoYWJldGljIGluZm9ybWF0aW9uIHdoZW4gSSBzb3J0IGRyYWdvblwiLCgpID0+IHtcbiAgICBleHBlY3QobG92ZXJzRGF0YS5zb3J0UG9rZSgobG92ZXJzRGF0YS5maWxQb2tlVHlwZShQT0tFTU9OLnBva2Vtb24sXCJEcmFnb25cIikpLCAnYS16JykpLnRvRXF1YWwob3JkZXJQb2tlbW9uRmlsdGVyRHJhZ29uTW9jayk7XG59KTtcbn0pO1xuXG5kZXNjcmliZShcImF2ZXJDYW5keVwiLCAoKSA9PiB7XG4gIGl0IChcInNob3VsZCBiZSBhIGZ1bmN0aW9uXCIsKCkgPT4ge1xuICAgICAgICBleHBlY3QodHlwZW9mIGxvdmVyc0RhdGEuYXZlckNhbmR5KS50b0JlKCdmdW5jdGlvbicpO1xuICB9KTtcblxuICBpdCAoXCJzaG91bGQgYmUgYSBudW1iZXJcIiwgKCkgPT4ge1xuICAgICAgICBleHBlY3QobG92ZXJzRGF0YS5hdmVyQ2FuZHkobG92ZXJzRGF0YS5maWxQb2tlVHlwZShQT0tFTU9OLnBva2Vtb24sXCJEcmFnb25cIikpKS50b0JlKDYyLjUpO1xuICB9KTtcbn0pO1xuXG5kZXNjcmliZShcImZpbmRQb2tlbW9uXCIsICgpID0+IHtcbiAgaXQgKFwic2hvdWxkIGJlIGEgZnVuY3Rpb25cIiwoKSA9PiB7XG4gICAgICAgIGV4cGVjdCh0eXBlb2YgbG92ZXJzRGF0YS5maW5kUG9rZW1vbikudG9CZSgnZnVuY3Rpb24nKTtcbiAgfSk7XG5cbiAgaXQgKFwic2hvdWxkIGJlIHJldHVybiBpbmZvcm1hdGlvbiBhYm91dCBQaWthY2h1IGlmIHlvdSBmaW5kIFBpa2FjaHVcIiwoKSA9PiB7XG4gICAgZXhwZWN0KGxvdmVyc0RhdGEuZmluZFBva2Vtb24oUE9LRU1PTi5wb2tlbW9uLFwiUGlrYWNodVwiKSkudG9FcXVhbChwaWthY2h1TW9jayk7XG59KTsgIFxufSk7XG5cbiJdfQ==

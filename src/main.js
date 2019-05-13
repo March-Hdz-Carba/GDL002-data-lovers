@@ -4,6 +4,10 @@ const pageStar = () => {
   document.getElementById("card").style.display="block";
   document.getElementById("cardPokemon").style.display="none";
   document.getElementById("listPokemon").style.display="none";
+  document.getElementById("listaPoke").innerHTML = " ";
+  document.getElementById("candy").innerHTML = " ";
+  document.getElementById("pokemon").innerHTML = " ";
+  document.getElementById("namePoke").value = " ";
 };
 
 document.getElementById("backStart").addEventListener("click",pageStar);
@@ -53,7 +57,7 @@ function dinamicPoke(onePokemon){
     let pokemonSpace = " ";
       for (let onePokemon of data) {
         pokemonSpace = pokemonSpace + dinamicPoke(onePokemon);
-        }
+        }    
     card.innerHTML = pokemonSpace;
      return pokemonSpace; 
 }
@@ -69,6 +73,7 @@ for(let i=0; i < arrayButtons.length; i++) {
     let filter = window.loversData.filPokeType(pokeData,condition); 
     showCards(filter,card);
     orderPoke(filter);
+    averCandyPrint(filter);
   });
 }   
 
@@ -84,13 +89,32 @@ const orderPoke = (filter) => {
     });
  };
 
-
-/*const averCandyPrint = () => {
-  let averResul = window.loversData.averCandy(POKEMON.pokemon);
+//Funcion para mandar llamar la funcion de promediar cantidad de candys por tipo de pokemon
+const averCandyPrint = (filter) => {
+  let averResul = window.loversData.averCandy(filter);
   document.getElementById("candy").innerHTML = averResul;
-  console.log(averResul);
 };
-document.getElementById("candys").addEventListener("click",averCandyPrint);
-*/
 
+//Funcion para mandar llamar funcion buscar pokemon
+const showFindPokemon = () => {
+  let namePoke = document.getElementById("namePoke").value.trim();
+  let pokeFind = loversData.findPokemon(POKEMON.pokemon,namePoke);
+    let cardPokeFind = ` <div class="cardPokeSearch">
+        <h2>${pokeFind.name}</h2>
+        <img src="${pokeFind.img}">
+        <p id="heightPokeFind">Talla:${pokeFind.height}</p>
+        <p id="weightPokeFind">Peso:${pokeFind.weight}</p>
+        <p id="typePokeFind">Tipo:${pokeFind.type}</p>
+        <p id="weaknessesPokeFind">Debilidades:${pokeFind.weaknesses}</p>
+      </div>`;
+    document.getElementById("pokemon").innerHTML = cardPokeFind;  
+}; 
 
+document.getElementById("findPkemon").addEventListener("click", showFindPokemon);
+
+/*const  selectName = (dataPokeName) => {
+  let dataPokeName = POKEMON.pokemon;
+  let filterNamePoke = dataPokeName.filter((obj) => (obj.name));
+  let arrayNamePoke = filterNamePoke.map((obj) => (obj.name));
+  console.log(arrayNamePoke);
+}*/
