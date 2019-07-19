@@ -2,10 +2,5 @@
   "env": {
     "node": true,
     "jest": true
-  },
-
-  "globals": {
-    "loversData": false, "POKEMON": false
-}
-
+  }
 }

@@ -19,21 +19,28 @@ const sortPoke = (filter,orderValue) => {
     return 0;
 };
 
-//Funcion para promediar cantidad de candy_count
+//Funcion para promediar cantidad de candy_count por tipo pokemon
 const averCandy = (pokeData) => {
   let pokeAll = pokeData;
-    pokeAll.filter(elemt => elemt.candy_count);
-    pokeAll.map(elemt => elemt.candy_count);
-    let averPokeRedu = pokeAll.reduce(function(accumalatore,valueNext){accumalatore+valueNext});
-    let averPokeCandy = averPokeRedu/pokeAll.length;
-    console.log(averPokeRedu);
-    return averPokeCandy
+  let pokeAllFilterCandy = pokeAll.filter((elemt) => (elemt.candy_count));
+  let NewPokeAllFilterCandy = pokeAllFilterCandy.map((elemt) => (elemt.candy_count));
+  let averPokeRedu = NewPokeAllFilterCandy.reduce(function(accumalatore,valueNext){return accumalatore+valueNext;});
+  let averPokeCandy = averPokeRedu/pokeAllFilterCandy.length;
+  return averPokeCandy;
 };
+
+//Funcion para buscar pokemon
+ const findPokemon = (dataPokemon, condition) => {
+   const especificPoke = dataPokemon.find (data => data.name === condition);
+   return especificPoke;
+};
+
 
 window.loversData = {
   filPokeType: filPokeType,
   sortPoke: sortPoke,
-  averCandy: averCandy
+  averCandy: averCandy,
+  findPokemon: findPokemon
 };
 
 
