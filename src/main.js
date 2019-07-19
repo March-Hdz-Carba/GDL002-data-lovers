@@ -42,7 +42,7 @@ function dinamicPoke(onePokemon){
             <p id="heightPokeFind">Talla:${onePokemon.height}</p>
             <p id="weightPokeFind">Peso:${onePokemon.weight}</p>
             <p id="typePokeFind">Tipo:${onePokemon.type}</p>
-            <p id="weaknessesPokeFind">Debilidades:${onePokemon.weaknesses}</p>
+            <p id="weaknessesPokeFind">Debilidades:<br>${onePokemon.weaknesses}</p>
           </div>
         </div>
       </div>
@@ -99,6 +99,10 @@ const averCandyPrint = (filter) => {
 const showFindPokemon = () => {
   let namePoke = document.getElementById("namePoke").value.trim();
   let pokeFind = loversData.findPokemon(POKEMON.pokemon,namePoke);
+  if(namePoke == ""){
+    alert("Ingresa el nombre del Pokemon que quieras buscar")
+    pageStar();
+  }else{
     let cardPokeFind = ` <div class="cardPokeSearch">
         <h2>${pokeFind.name}</h2>
         <img src="${pokeFind.img}">
@@ -108,13 +112,17 @@ const showFindPokemon = () => {
         <p id="weaknessesPokeFind">Debilidades:${pokeFind.weaknesses}</p>
       </div>`;
     document.getElementById("pokemon").innerHTML = cardPokeFind;  
+    document.getElementById("namePoke").value = "";
+  }
+    
 }; 
 
 document.getElementById("findPkemon").addEventListener("click", showFindPokemon);
 
-/*const  selectName = (dataPokeName) => {
-  let dataPokeName = POKEMON.pokemon;
-  let filterNamePoke = dataPokeName.filter((obj) => (obj.name));
-  let arrayNamePoke = filterNamePoke.map((obj) => (obj.name));
-  console.log(arrayNamePoke);
-}*/
+// function cleanInput () {
+//   let pokeNameInput = document.getElementById("namePoke");
+//   let pokeNameInput = "";
+//   return pokeNameInput; 
+// }
+// document.getElementById("backStart").addEventListener("click", cleanInput);
+
